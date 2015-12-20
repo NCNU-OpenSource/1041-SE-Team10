@@ -27,6 +27,11 @@ require("config.php");
     left: 700px;
     top: 470px;
 }
+.ME{
+	position: absolute;
+	left: 390px;
+	top: 400px;
+}
 <!--.btn {
   font-size: 3vmin;
   padding: 0.75em 1.5em;
@@ -165,7 +170,7 @@ $(window).resize();
 <html>
 <body>
 <div class="game">
-<img src="pics/shop.png" id="shop" width="60px" height="auto" >
+<a href="shop.php"><img src="pics/shop.png" id="shop" width="60px" height="auto" ></a>
 <!--if oven =0 -> locked, =1 -> unlocked-->
 <?php
     $uid=$_SESSION['uID'];
@@ -191,6 +196,19 @@ $(window).resize();
         echo "<img src=\"pics/cookieovenunlocked.png\" id=\"cookieoven\" width=\"300px\">";
 	
 ?>
+<div class="ME">
+
+<?php
+$sql2 = "select * from user ";
+$results2=mysqli_query($conn,$sql2);
+$rs2=mysqli_fetch_array($results2);
+echo "<img src=\"pics\cash.png\" style=\"width:100px\" />：";
+echo $rs2['cash'];
+echo "<img src=\"pics\EXP.png\" style=\"width:100px\" />：";
+echo $rs2['exp'];
+?>
+</div>
+
 <div id="popup1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
         <h3>Buy Pizza Oven</h3>
