@@ -14,7 +14,7 @@
 $host = 'localhost';
 $user = 'myid';
 $pass = '12345';
-$db = 'midterm';
+$db = 'masterchef';
 $conn = mysqli_connect($host, $user, $pass,$db) or die('Error with MySQL connection'); //跟MyMSQL連線並登入
 mysqli_query($conn,"SET NAMES utf8");
 $uid=mysqli_real_escape_string($conn,$_POST['uid']);
