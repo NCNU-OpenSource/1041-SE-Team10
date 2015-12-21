@@ -57,10 +57,14 @@
     <input type="radio" id="gender" name="gender" value="1" />男<input type="radio" id="gender" name="gender" value="0"/>女</td>  
   </tr>
   <tr>
-    <td colspan="2" text align="center"><input type="submit" name="Submit" value="送出" /></td>
+    <td colspan="2" text align="center">
+    	<input type="submit" name="Submit" value="送出" />
+    	<input type="reset" value="清除" />
+    </td>
   </tr>
 	</form>
 </table>
+<h1><a href="login.php">Back</a></h1>
 </body>
 </div>
 </html>
