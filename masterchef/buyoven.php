@@ -14,4 +14,22 @@ if ($oven==pizzaoven) {
 	mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
 	header("Location:home.php");
 } else echo "empty message id.";
+if ($oven==breadoven) {
+	$sql = "update oven set `breadoven`='1' where uid='$uid';";
+    $sql2 = "update user set `cash`='cash-500' where uid='$uid';";
+	mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
+	header("Location:home.php");
+} else echo "empty message id.";
+if ($oven==cookieoven) {
+	$sql = "update oven set `cookieoven`='1' where uid='$uid';";
+    $sql2 = "update user set `cash`='cash-500' where uid='$uid';";
+	mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
+	header("Location:home.php");
+} else echo "empty message id.";
+if ($oven==cakeoven) {
+	$sql = "update oven set `cakeoven`='1' where uid='$uid';";
+    $sql2 = "update user set `cash`='cash-500' where uid='$uid';";
+	mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
+	header("Location:home.php");
+} else echo "empty message id.";
 ?>

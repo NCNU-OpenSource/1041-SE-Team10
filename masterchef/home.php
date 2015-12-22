@@ -27,10 +27,10 @@ require("config.php");
     left: 700px;
     top: 470px;
 }
-.ME{
+.coinexp{
 	position: absolute;
-	left: 390px;
-	top: 400px;
+	left: 500px;
+	top: 490px;
 }
 <!--.btn {
   font-size: 3vmin;
@@ -169,9 +169,21 @@ $(window).resize();
 </head>
 <html>
 <body>
+<div class="coinexp">
+<?php
+$sql2 = "select * from user ";
+$results2=mysqli_query($conn,$sql2);
+$rs2=mysqli_fetch_array($results2);
+echo "<img src=\"pics\cash.png\" style=\"width:60px\" />：";
+echo $rs2['cash'];
+echo "<img src=\"pics\EXP.png\" style=\"width:60px\" />：";
+echo $rs2['exp'];
+?>
+</div>
 <div class="game">
+
 <a href="shop.php"><img src="pics/shop.png" id="shop" width="60px" height="auto" ></a>
-<!--if oven =0 -> locked, =1 -> unlocked-->
+<!--if oven =0 -> locked, =1 -> unlocked -->
 <?php
     $uid=$_SESSION['uID'];
     $sql = "select * from oven where `uid`='$uid';";
@@ -183,34 +195,21 @@ $(window).resize();
         echo "<a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buypizzaoven\"><img src=\"pics/pizzaovenlocked.png\" id=\"pizzaoven\" width=\"300px\"></a>";
     }
     else
-        echo "<img src=\"pics/pizzaovenunlocked.png\" id=\"pizzaoven\" width=\"300px\">";
+        echo "<a href=\"pizzaoven.php\"><img src=\"pics/pizzaovenunlocked.png\" id=\"pizzaoven\" width=\"300px\">";
     if ($rs['breadoven']==0)
-        echo "<a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buybreadoven\"><img src=\"pics/breadovenlocked.png\" id=\"breadoven\" width=\"300px\"></a>";
+        echo "<a class=\"js-open-modal\" href=\"#\" data-modal-id=\"buybreadoven\"><img src=\"pics/breadovenlocked.png\" id=\"breadoven\" width=\"300px\"></a>";
     else
-        echo "<img src=\"pics/breadovenunlocked.png\" id=\"breadoven\" width=\"300px\">";
+        echo "<a href=\"breadoven.php\"><img src=\"pics/breadovenunlocked.png\" id=\"breadoven\" width=\"300px\"></a>";
     if ($rs['cakeoven']==0)
-        echo "<img src=\"pics/cakeovenlocked.png\" id=\"cakeoven\" width=\"300px\">";
+        echo "<a class=\"js-open-modal\" href=\"#\" data-modal-id=\"buycakeoven\"><img src=\"pics/cakeovenlocked.png\" id=\"cakeoven\" width=\"300px\"></a>";
     else
-        echo "<img src=\"pics/cakeovenunlocked.png\" id=\"cakeoven\" width=\"300px\">";
+        echo "<a href=\"cakeoven.php\"><img src=\"pics/cakeovenunlocked.png\" id=\"cakeoven\" width=\"300px\"></a>";
     if ($rs['cookieoven']==0)
-        echo "<img src=\"pics/cookieovenlocked.png\" id=\"cookieoven\" width=\"300px\">";
+        echo "<a class=\"js-open-modal\" href=\"#\" data-modal-id=\"buycookieoven\"><img src=\"pics/cookieovenlocked.png\" id=\"cookieoven\" width=\"300px\"></a>";
     else
-        echo "<img src=\"pics/cookieovenunlocked.png\" id=\"cookieoven\" width=\"300px\">";
+        echo "<a href=\"cookieoven.php\"><img src=\"pics/cookieovenunlocked.png\" id=\"cookieoven\" width=\"300px\"></a>";
 	
 ?>
-<div class="ME">
-
-<?php
-$sql2 = "select * from user ";
-$results2=mysqli_query($conn,$sql2);
-$rs2=mysqli_fetch_array($results2);
-echo "<img src=\"pics\cash.png\" style=\"width:100px\" />：";
-echo $rs2['cash'];
-echo "<img src=\"pics\EXP.png\" style=\"width:100px\" />：";
-echo $rs2['exp'];
-?>
-</div>
-
 <div id="buypizzaoven" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
         <h3>Buy Pizza Oven</h3>
@@ -218,9 +217,34 @@ echo $rs2['exp'];
         <div class="modal-body">
             <p>Do you wish you buy the pizza oven for $500?</p>
         </div>
-        <footer><form method="post" action="buyoven.php" value="pizza"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizzaoven">buy</button></form> </footer>
+        <footer><form method="post" action="buyoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizzaoven">buy</button></form> </footer>
 </div>
+<div id="buybreadoven" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">×</a>
+        <h3>Buy Bread Oven</h3>
+    </header>
+        <div class="modal-body">
+            <p>Do you wish you buy the bread oven for $500?</p>
+        </div>
+        <footer><form method="post" action="buyoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="breadoven">buy</button></form> </footer>
 </div>
-
+<div id="buycakeoven" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">×</a>
+        <h3>Buy Cake Oven</h3>
+    </header>
+        <div class="modal-body">
+            <p>Do you wish you buy the Cake oven for $500?</p>
+        </div>
+        <footer><form method="post" action="buyoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cakeoven">buy</button></form> </footer>
+</div>
+<div id="buycookieoven" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">×</a>
+        <h3>Buy Cookie Oven</h3>
+    </header>
+        <div class="modal-body">
+            <p>Do you wish you buy the cookie oven for $500?</p>
+        </div>
+        <footer><form method="post" action="buyoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookieoven">buy</button></form> </footer>
+</div>
 </body>
 </html>
