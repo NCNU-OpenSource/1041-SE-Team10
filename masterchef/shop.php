@@ -36,16 +36,16 @@ ul li{
 
 </div>
 <div class="chef">
-<img src="pics\Chef-Clipart.jpg">
+<img src="pics\Chef-Clipart.jpg" width="250px">
 </div>
 
 <div class="bake" >
 
 <table>
-<tr><td><img src ="pics\circles-2.png" style="z-index:1"><img src ="pics\bread_clip_art_13499.jpg" style="z-index:10"></td>
-<td><img src ="pics\circles-2.png" style="z-index:1"><img src ="pics\cake-clipart-4ncEKrATA.png" style="z-index:10"></td></tr>
-<tr><td><img src ="pics\circles-2.png" style="z-index:1"><img src ="pics\Cookie_with_Chocolate_PNG_Clipart_Picture.png" style="z-index:10"></td>
-<td><img src ="pics\circles-2.png" style="z-index:1"><img src ="pics\clipart-pizza-RiAyEoB9T.jpeg" style="z-index:10">
+<tr><td><img src ="pics\breadbutton.png" style="z-index:10" width="150px"></td>
+<td><img src ="pics\cakebutton.png" style="z-index:10" width="150px"></td></tr>
+<tr><td><img src ="pics\cookiebutton.png" style="z-index:10" width="150px"></td>
+<td><img src ="pics\pizzabutton.png" style="z-index:10" width="150px"></td>
 </tr>
 </table>
 

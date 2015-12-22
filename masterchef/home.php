@@ -174,16 +174,18 @@ $(window).resize();
 <!--if oven =0 -> locked, =1 -> unlocked-->
 <?php
     $uid=$_SESSION['uID'];
-    $sql = "select * from oven where uid='$uid';";
+    $sql = "select * from oven where `uid`='$uid';";
+    mysqli_query($conn,$sql) or die("MySQL query error");
     $results=mysqli_query($conn,$sql);
     $rs=mysqli_fetch_array($results);
+    
     if ($rs['pizzaoven']==0){
-        echo "<a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"popup1\"><img src=\"pics/pizzaovenlocked.png\" id=\"pizzaoven\" width=\"300px\"></a>";
+        echo "<a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buypizzaoven\"><img src=\"pics/pizzaovenlocked.png\" id=\"pizzaoven\" width=\"300px\"></a>";
     }
     else
         echo "<img src=\"pics/pizzaovenunlocked.png\" id=\"pizzaoven\" width=\"300px\">";
     if ($rs['breadoven']==0)
-        echo "<img src=\"pics/breadovenlocked.png\" id=\"breadoven\" width=\"300px\">";
+        echo "<a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buybreadoven\"><img src=\"pics/breadovenlocked.png\" id=\"breadoven\" width=\"300px\"></a>";
     else
         echo "<img src=\"pics/breadovenunlocked.png\" id=\"breadoven\" width=\"300px\">";
     if ($rs['cakeoven']==0)
@@ -209,14 +211,14 @@ echo $rs2['exp'];
 ?>
 </div>
 
-<div id="popup1" class="modal-box">
+<div id="buypizzaoven" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
         <h3>Buy Pizza Oven</h3>
     </header>
         <div class="modal-body">
             <p>Do you wish you buy the pizza oven for $500?</p>
         </div>
-        <footer><a href="#" class="btn btn-small js-modal-close">buy</a> </footer>
+        <footer><form method="post" action="buyoven.php" value="pizza"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizzaoven">buy</button></form> </footer>
 </div>
 </div>
 
