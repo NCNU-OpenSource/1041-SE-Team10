@@ -43,8 +43,9 @@ else{
     width: 800px;
     height: 600px;
     overflow: hidden;
-    padding-left: 30px;
-    padding-top: 30px;
+    padding-left: 250px;
+    padding-top: 80px;
+    
 }
 .game h1{
     padding-left: 30px;
@@ -63,17 +64,31 @@ else{
     width: 100%;
     height: auto;
 }
+.form
+{
+    position:absolute;
+    left:260px;
+    top:147px;
+    padding-top: 20px;
+    width:250px;
+    height:300px;
+    background:pink;
+}
 </style>
 <body id="">
 <div class="game">
+
+<form class="form" method="post" action="login.php">
 <h1>Login</h1>
 <p>
 New User? Click <a href="register.php">here</a> to register<br/><br/>
-<form method="post" action="login.php">
+
 Username: <input type="text" name="id"><br />
-Password : <input type="password" name="pwd"><br />
+Password: <input type="password" name="pwd"><br />
+</br>
 <input type="submit">
 </form>
+</table>
 </p>
 </div>
 </body>
