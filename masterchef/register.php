@@ -60,11 +60,11 @@
     <td colspan="2" text align="center">
     	<input type="submit" name="Submit" value="送出" />
     	<input type="reset" value="清除" />
+    	<input type ="button" onclick="javascript:location.href='login.php'" value="返回">
     </td>
   </tr>
 	</form>
 </table>
-<h1><a href="login.php">Back</a></h1>
 </body>
 </div>
 </html>
