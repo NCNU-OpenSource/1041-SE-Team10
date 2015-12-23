@@ -28,17 +28,32 @@
     width: 100%;
     height: auto;
 }
+.form 
+{
+    position:absolute;
+    left:260px;
+    top:147px;
+    width:280px;
+    height:320px;
+    background:pink;
+}
+.title
+{
+    position:absolute;
+    left:200px;
+}
 </style>
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>申請帳號</title>
+<title >申請帳號</title>
 </head>
 <body>
 <div class="game">
-<h1>申請帳號</h1>
-<table width="200" border="1">
+
+<table class="form" width="200" border="1">
 <form method="post" action="newaccount.php">
+  <th colspan="2">申請帳號</th>
   <tr>
     <td>帳號</td>
     <td><input name="uid" type="text" id="uid"></td>
