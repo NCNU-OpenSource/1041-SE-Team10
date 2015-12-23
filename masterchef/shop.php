@@ -19,6 +19,13 @@ require("config.php");
 	left: 420px;
 	top: 110px;
 }
+.Back{
+    width: 150px;
+	height: 100px;
+    position: absolute;
+	left: 700px;
+	top: 500px;
+}
 ul li{
     list-style-type:none;
 	width:20px;
@@ -35,6 +42,11 @@ ul li{
 <div class="game">
 
 </div>
+
+<div class="Back">
+<a href="home.php"><img src="pics/back.jpg" id="back" width="60px" height="auto" ></a>
+</div>
+
 <div class="chef">
 <img src="pics\Chef-Clipart.jpg" width="250px">
 </div>
