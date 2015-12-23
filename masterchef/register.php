@@ -8,8 +8,8 @@
     width: 800px;
     height: 600px;
     overflow: hidden;
-    padding-left: 30px;
-    padding-top: 30px;
+    padding-left: 50px;
+    padding-top: 60px;
 }
 .game h1{
     padding-left: 30px;
