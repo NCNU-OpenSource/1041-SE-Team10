@@ -16,7 +16,7 @@ require("config.php");
 	width: 150px;
 	height: 100px;
     position: absolute;
-	left: 420px;
+	left: 380px;
 	top: 110px;
 }
 .Back{
@@ -25,6 +25,11 @@ require("config.php");
     position: absolute;
 	left: 700px;
 	top: 500px;
+}
+table{
+	position: absolute;
+	z-index: 10;
+	ba
 }
 ul li{
     list-style-type:none;
@@ -48,13 +53,13 @@ ul li{
 </div>
 
 <div class="chef">
-<img src="pics\Chef-Clipart.jpg" width="250px">
+<img src="pics\Chef-Clipart.png" width="400px">
 </div>
 
 <div class="bake" >
 
 <table>
-<tr><td><img src ="pics\breadbutton.png" style="z-index:10" width="150px"></td>
+<tr><td><a href="breadmaterial.php"><img src="pics\breadbutton.png" style="z-intex:10" width="150px" ></a></td>
 <td><img src ="pics\cakebutton.png" style="z-index:10" width="150px"></td></tr>
 <tr><td><img src ="pics\cookiebutton.png" style="z-index:10" width="150px"></td>
 <td><img src ="pics\pizzabutton.png" style="z-index:10" width="150px"></td>
