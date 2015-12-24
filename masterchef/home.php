@@ -31,6 +31,7 @@ require("config.php");
 	position: absolute;
 	left: 500px;
 	top: 490px;
+    z-index:10;
 }
 <!--.btn {
   font-size: 3vmin;
