@@ -36,7 +36,7 @@ require("config.php");
 	top: 90px;
     z-index: 10;
     
-    opacity:0.8;
+    opacity:0.9;
 }
 table {
     width: 700px;
