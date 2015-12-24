@@ -21,7 +21,7 @@ require("config.php");
     position: absolute;
 	left: 600px;
 	top: 340px;
-	z-index: 10;
+	z-index: 20;
 }
 .Back{
     width: 150px;
@@ -30,10 +30,13 @@ require("config.php");
 	left: 750px;
 	top: 600px;
 }
-.Bake {
+.bake {
 	position: absolute;
 	left: 80px;
 	top: 90px;
+    z-index: 10;
+    
+    opacity:0.8;
 }
 table {
     width: 700px;
@@ -64,7 +67,7 @@ ul li{
 </div>
 
 <div class="Back" style="z-index:15">
-<a href="home.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
+<a href="shop.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
 
 <div class="chef">
@@ -74,9 +77,9 @@ ul li{
 <div class="bake" >
 
 <table class="breadcategory">
-<tr><td><img src ="pics\bread1.png" style="z-index:10" width="150px"></td>
-<td><img src ="pics\bread2.jpg" style="z-index:10" width="150px"></td>
-<td><img src ="pics\bread3.png" style="z-index:10" width="150px"></td></tr>
+<tr><td><img src ="pics\bread1.png"  width="150px"></td>
+<td><img src ="pics\bread2.jpg"  width="150px"></td>
+<td><img src ="pics\bread3.png"  width="150px"></td></tr>
 <tr><td>$50</td>
 <td>$60</td>
 <td>$70</td></tr>
