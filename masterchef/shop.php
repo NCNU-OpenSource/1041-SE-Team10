@@ -53,7 +53,7 @@ ul li{
 </div>
 
 <div class="chef">
-<img src="pics\Chef-Clipart.png" width="250px">
+<img src="pics\Chef-Clipart.png" width="400px">
 </div>
 
 <div class="bake" >
