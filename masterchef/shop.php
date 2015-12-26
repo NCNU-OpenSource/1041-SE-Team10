@@ -60,9 +60,9 @@ ul li{
 
 <table> 
 <tr><td><a href="breadmaterial.php"><img src="pics\breadbutton.png" style="z-intex:10" width="150px" ></a></td>
-<td><img src ="pics\cakebutton.png" style="z-index:10" width="150px"></td></tr>
-<tr><td><img src ="pics\cookiebutton.png" style="z-index:10" width="150px"></td>
-<td><img src ="pics\pizzabutton.png" style="z-index:10" width="150px"></td>
+<td><a href="cakematerial.php"><img src ="pics\cakebutton.png" style="z-index:10" width="150px"></a></td></tr>
+<tr><td><a href="cookiematerial.php"><img src ="pics\cookiebutton.png" style="z-index:10" width="150px"></a></td>
+<td><a href="pizzamaterial.php"><img src ="pics\pizzabutton.png" style="z-index:10" width="150px"></a></td>
 </tr>
 </table>
 
