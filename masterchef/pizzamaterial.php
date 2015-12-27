@@ -76,13 +76,13 @@ ul li{
 <div class="bake" >
 
 <table class="pizzacategory">
-<tr><td><img src ="*"  width="150px"></td>
-<td><img src ="*"  width="150px"></td>
-<td><img src ="*"  width="150px"></td></tr>
+<tr><td><img src ="pics\pizza1.png"  width="150px"></td>
+<td><img src ="pics\pizza2.png"  width="150px"></td>
+<td><img src ="pics\pizza3.png"  width="150px"></td></tr>
 <tr><td>$50</td>
 <td>$60</td>
 <td>$70</td></tr>
-<tr><td><img src ="*" style="z-index:10" width="150px"></td>
+<tr><td><img src ="pics\pizza4.png" style="z-index:10" width="150px"></td>
 <tr><td>$80</td>
 </tr>
 </table>
