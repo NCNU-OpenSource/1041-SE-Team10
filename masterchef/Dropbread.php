@@ -25,15 +25,7 @@
 	left: 700px;
 	top: 500px;
 }
-table{
-	position: absolute;
-	z-index: 10;
-	ba
-}
-ul li{
-    list-style-type:none;
-	width:20px;
-}
+
 </style>
 <html lang="en">
 <head>
