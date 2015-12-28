@@ -67,12 +67,12 @@ else{
 .form
 {
     position:absolute;
-    left:260px;
+    left:200px;
     top:147px;
     padding-top: 20px;
-    width:250px;
+    width:400px;
     height:300px;
-    background:pink;
+    background:#F7F2E0;
 }
 </style>
 <body id="">

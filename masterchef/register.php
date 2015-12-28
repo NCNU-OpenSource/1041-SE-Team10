@@ -35,7 +35,7 @@
     top:147px;
     width:280px;
     height:320px;
-    background:pink;
+    background:#F7F2E0;
 }
 .title
 {
