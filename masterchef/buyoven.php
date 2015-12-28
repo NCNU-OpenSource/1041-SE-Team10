@@ -84,10 +84,12 @@ if ($rs2['cash']>=500){
         header("Location:home.php");
     } else echo "empty message id.";
 }
+else
+    echo "<h1>you don't have enough money!</h1>"
 ?>
 </div>
 <div class="Back" style="z-index:15">
-<a href="cakematerial.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
+<a href="home.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
 </body>
 </html>
