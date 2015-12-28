@@ -67,6 +67,42 @@ if ($ingredient=='cake1') {
         echo "<h1>not enough money!</h1>";
     }
 } else echo "empty message id.";
+if ($ingredient=='cake2') {
+    if ($rs2['cash']>=60){
+	$sql = "update cakeoven set `cake2`=`cake2`+1 where `uid`='$uid';";
+    mysqli_query($conn,$sql) or die("MySQL query error"); 
+    $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
+	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    echo "<h1>purchase successful</h1>";
+    }
+    else{
+        echo "<h1>not enough money!</h1>";
+    }
+} else echo "empty message id.";
+if ($ingredient=='cake3') {
+    if ($rs2['cash']>=70){
+	$sql = "update cakeoven set `cake3`=`cake3`+1 where `uid`='$uid';";
+    mysqli_query($conn,$sql) or die("MySQL query error"); 
+    $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
+	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    echo "<h1>purchase successful</h1>";
+    }
+    else{
+        echo "<h1>not enough money!</h1>";
+    }
+} else echo "empty message id.";
+if ($ingredient=='cake4') {
+    if ($rs2['cash']>=80){
+	$sql = "update cakeoven set `cake4`=`cake4`+1 where `uid`='$uid';";
+    mysqli_query($conn,$sql) or die("MySQL query error"); 
+    $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
+	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    echo "<h1>purchase successful</h1>";
+    }
+    else{
+        echo "<h1>not enough money!</h1>";
+    }
+} else echo "empty message id.";
 ?>
 </div>
 <div class="Back" style="z-index:15">
