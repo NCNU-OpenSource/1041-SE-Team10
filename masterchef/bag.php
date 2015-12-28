@@ -68,26 +68,26 @@ $rs2=mysqli_fetch_array($results2);
 <div id="menu">
   <li class="ui-widget-header">Pizza</li>
 
-  <li>Option 1<img src ="pics\pizza1.png"  width="50px"></li>
+  <li>Option 1<img src ="pics\pizza1.png"  width="50px">
   <?php
   echo" Sum：";
   echo $rs2['cash']; 
-  ?>
-  <li>Option 2<img src ="pics\pizza2.png"  width="50px"></li>
+  ?></li>
+  <li>Option 2<img src ="pics\pizza2.png"  width="50px">
   <?php
   echo" Sum：";
   echo $rs2['cash']; 
-  ?>
-  <li>Option 3<img src ="pics\pizza3.png"  width="50px"></li>
+  ?></li>
+  <li>Option 3<img src ="pics\pizza3.png"  width="50px">
   <?php
   echo" Sum：";
   echo $rs2['cash']; 
-  ?>
-  <li>Option 4<img src ="pics\pizza4.png"  width="50px"></li>
+  ?></li>
+  <li>Option 4<img src ="pics\pizza4.png"  width="50px">
   <?php
   echo" Sum：";
   echo $rs2['cash']; 
-  ?>
+  ?></li>
   </div>
 <div id="m1">
 <div id="menu1">
@@ -123,26 +123,26 @@ $rs2=mysqli_fetch_array($results2);
 <div id="menu2">
   <li class="ui-widget-header">Cake</li>
 
-  <li>Option 1<img src ="pics\cake1.png"  width="50px"></li>
+  <li>Option 1<img src ="pics\cake1.png"  width="50px">
   <?php
   echo" Sum：";
   echo $rs2['cash']; 
-  ?>
-  <li>Option 2<img src ="pics\cake2.png"  width="50px"></li>
+  ?></li>
+  <li>Option 2<img src ="pics\cake2.png"  width="50px">
   <?php
   echo" Sum：";
   echo $rs2['cash']; 
-  ?>
-  <li>Option 3<img src ="pics\cake3.png"  width="50px"></li>
+  ?></li>
+  <li>Option 3<img src ="pics\cake3.png"  width="50px">
   <?php
   echo" Sum：";
   echo $rs2['cash']; 
-  ?>
-  <li>Option 4<img src ="pics\cake4.png"  width="50px"></li>
+  ?></li>
+  <li>Option 4<img src ="pics\cake4.png"  width="50px">
   <?php
   echo" Sum：";
   echo $rs2['cash']; 
-  ?>
+  ?></li>
 </div>
 </div>
 <div id="m3">
