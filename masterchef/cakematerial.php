@@ -176,16 +176,16 @@ $(window).resize();
 <tr><td><img src ="pics\cake1.png"  width="150px"></td>
 <td><img src ="pics\cake2.png"  width="150px"></td>
 <td><img src ="pics\cake3.png"  width="150px"></td></tr>
-<tr><td>$50<br/><a class="js-open-modal btn" href="#" data-modal-id="buycake1"><img src ="pics\buybutton.png"  width="100px"></a></td>
-<td>$60<br/><a class="js-open-modal btn" href="#" data-modal-id="buycake2"><img src ="pics\buybutton.png"  width="100px"></a></td>
-<td>$70<br/><a class="js-open-modal btn" href="#" data-modal-id="buycake3"><img src ="pics\buybutton.png"  width="100px"></a></td></tr>
+<tr><td>$50<br/><a class="js-open-modal btn" href="#" data-modal-id="buy1"><img src ="pics\buybutton.png"  width="100px"></a></td>
+<td>$60<br/><a class="js-open-modal btn" href="#" data-modal-id="buy2"><img src ="pics\buybutton.png"  width="100px"></a></td>
+<td>$70<br/><a class="js-open-modal btn" href="#" data-modal-id="buy3"><img src ="pics\buybutton.png"  width="100px"></a></td></tr>
 <tr><td><img src ="pics\cake4.png" style="z-index:10" width="150px"></td>
-<tr><td>$80<br/><a class="js-open-modal btn" href="#" data-modal-id="buycake4"><img src ="pics\buybutton.png"  width="100px"></a></td>
+<tr><td>$80<br/><a class="js-open-modal btn" href="#" data-modal-id="buy4"><img src ="pics\buybutton.png"  width="100px"></a></td>
 </tr>
 </table>
 
 </div>
-<div id="buycake1" class="modal-box">
+<div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
         <h3>Buy This Cake Ingredient?</h3>
     </header>
@@ -194,7 +194,7 @@ $(window).resize();
         </div>
         <footer><form method="post" action="buyingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake1">buy</button></form> </footer>
 </div>
-<div id="buycake2" class="modal-box">
+<div id="buy2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
         <h3>Buy This Cake Ingredient?</h3>
     </header>
@@ -203,7 +203,7 @@ $(window).resize();
         </div>
         <footer><form method="post" action="buyingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake2">buy</button></form> </footer>
 </div>
-<div id="buycake3" class="modal-box">
+<div id="buy3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
         <h3>Buy This Cake Ingredient?</h3>
     </header>
@@ -212,7 +212,7 @@ $(window).resize();
         </div>
         <footer><form method="post" action="buyingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake3">buy</button></form> </footer>
 </div>
-<div id="buycake4" class="modal-box">
+<div id="buy4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
         <h3>Buy This Cake Ingredient?</h3>
     </header>
