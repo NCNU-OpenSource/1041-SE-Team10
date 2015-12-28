@@ -26,6 +26,7 @@ $gender=mysqli_real_escape_string($conn,$_POST['gender']);
 if ($uid) {
 	$sql = "insert into user (id, password, nickname, gender, cash) values ('$uid', '$password','$nickname','$gender', '500');";
     $sql2 = "insert into oven (uid, cakeoven, breadoven, pizzaoven, cookieoven) values ('$uid', '0','0','0', '0');";
+    $sql3 = "insert into cakeoven (uid, cake1, cake2, cake3, cake4) values ('$uid', '0','0','0', '0');";
 	mysqli_query($conn,$sql) or die("MySQL insert message error"); //執行SQL
 	echo "New account added.";
     header("Location:login.php");

@@ -127,11 +127,7 @@ a.close:hover {
 }
 </style>
 <head>
-<!--<script src="jquery-1.11.3.min.js">
-$('#pizzaoven').click(function(){
-    if($rs['pizzaoven']==0) //問他要不要買
-});
-</script>-->
+
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
 <script>
 $(function(){
