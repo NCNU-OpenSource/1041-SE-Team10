@@ -194,7 +194,7 @@ $(window).resize();
         </div>
         <footer><form method="post" action="buyingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake1">buy</button></form> </footer>
 </div>
-<div id="buy2" class="modal-box">
+<div   id="buy2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
         <h3>Buy This Cake Ingredient?</h3>
     </header>
