@@ -26,6 +26,12 @@ require("config.php");
 	left: 700px;
 	top: 500px;
 }
+.bag{
+	width: 150px;
+	position: absolute;
+	left: 400px;
+	top: 400px;
+}
 table{
 	position: absolute;
 	z-index: 10;
@@ -35,6 +41,7 @@ ul li{
     list-style-type:none;
 	width:20px;
 }
+
 </style>
 <head>
 
@@ -54,6 +61,10 @@ ul li{
 
 <div class="chef">
 <img src="pics\Chef-Clipart.png" width="400px">
+</div>
+
+<div class="bag">
+<a href="equipment.php"><img src="pics\bag.png"></a>
 </div>
 
 <div class="bake" >
