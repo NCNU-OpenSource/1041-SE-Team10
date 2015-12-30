@@ -1,5 +1,6 @@
 <?php
 require("config.php");
+
 $ingredient = $_POST['id'];
 $host = 'localhost';
 $user = 'myid';
@@ -59,12 +60,15 @@ $select3="select * from cookieoven where `uid`='$uid';";
 $select4="select * from breadoven where `uid`='$uid';";
 $select5="select * from pizzaoven where `uid`='$uid';";
 //cake
+
 if ($ingredient=='cake1') {
+   
     if ($rs2['cash']>=50){
 	$sql = "update cakeoven set `cake1`=`cake1`+1 where `uid`='$uid';";
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    $which='cake';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -77,6 +81,7 @@ if ($ingredient=='cake2') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+     $which='cake';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -89,6 +94,7 @@ if ($ingredient=='cake3') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+     $which='cake';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -101,6 +107,7 @@ if ($ingredient=='cake4') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+     $which='cake';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -114,6 +121,7 @@ if ($ingredient=='bread1') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+     $which='bread';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -126,6 +134,7 @@ if ($ingredient=='bread2') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    $which='bread';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -138,6 +147,7 @@ if ($ingredient=='bread3') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    $which='bread';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -150,6 +160,7 @@ if ($ingredient=='bread4') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    $which='bread';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -163,6 +174,7 @@ if ($ingredient=='cookie1') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    $which='cookie';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -175,6 +187,7 @@ if ($ingredient=='cookie2') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    $which='cookie';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -187,6 +200,7 @@ if ($ingredient=='cookie3') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    $which='cookie';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -199,6 +213,7 @@ if ($ingredient=='cookie4') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    $which='cookie';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -212,6 +227,7 @@ if ($ingredient=='pizza1') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+    $which='pizza';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -224,6 +240,7 @@ if ($ingredient=='pizza2') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+     $which='pizza';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -236,6 +253,7 @@ if ($ingredient=='pizza3') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+     $which='pizza';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
@@ -248,16 +266,43 @@ if ($ingredient=='pizza4') {
     mysqli_query($conn,$sql) or die("MySQL query error"); 
     $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
 	mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
+     $which='pizza';//成功購買
     echo "<h1>purchase successful</h1>";
     }
     else{
         echo "<h1>not enough money!</h1>";
     }
 } else echo "empty message id.";
-?>
-</div>
+
+
+if($which=='cake'){
+ ?>   
 <div class="Back" style="z-index:15">
-<a href="cakematerial.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
+    <a href="cakematerial.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
+<?php
+}
+if($which=='bread'){
+ ?>   
+<div class="Back" style="z-index:15">
+    <a href="breadmaterial.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
+</div>
+<?php
+}
+if($which=='pizza'){
+ ?>   
+<div class="Back" style="z-index:15">
+    <a href="pizzamaterial.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
+</div>
+<?php
+}
+if($which=='cookie'){
+ ?>   
+<div class="Back" style="z-index:15">
+    <a href="cookiematerial.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
+</div>
+<?php    
+}
+?>
 </body>
 </html>
