@@ -279,6 +279,7 @@ if($which=='cake'){
  ?>   
 <div class="Back" style="z-index:15">
     <a href="cakematerial.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
+<<<<<<< HEAD
 </div>
 <?php
 }
@@ -289,6 +290,18 @@ if($which=='bread'){
 </div>
 <?php
 }
+=======
+</div>
+<?php
+}
+if($which=='bread'){
+ ?>   
+<div class="Back" style="z-index:15">
+    <a href="breadmaterial.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
+</div>
+<?php
+}
+>>>>>>> a9193c39cd1f7183cc38f532066e24786db5660c
 if($which=='pizza'){
  ?>   
 <div class="Back" style="z-index:15">
@@ -301,6 +314,7 @@ if($which=='cookie'){
 <div class="Back" style="z-index:15">
     <a href="cookiematerial.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
+<<<<<<< HEAD
 
 
 
@@ -310,5 +324,10 @@ if($which=='cookie'){
 
 ?>
 
+=======
+<?php    
+}
+?>
+>>>>>>> a9193c39cd1f7183cc38f532066e24786db5660c
 </body>
 </html>
