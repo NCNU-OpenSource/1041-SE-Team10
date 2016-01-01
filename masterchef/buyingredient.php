@@ -70,7 +70,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='cake';//成功購買
-            echo "<h1>purchase successful1</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -83,7 +83,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='cake';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -96,7 +96,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='cake';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -109,7 +109,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='cake';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -122,7 +122,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='bread';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -135,7 +135,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='bread';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -148,7 +148,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='bread';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -161,7 +161,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='bread';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -174,7 +174,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='cookie';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -187,7 +187,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='cookie';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -200,7 +200,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='cookie';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -213,7 +213,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='cookie';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -226,7 +226,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='pizza';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -239,7 +239,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='pizza';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -252,7 +252,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='pizza';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
@@ -265,7 +265,7 @@ switch($ingredient)
             $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
             $which='pizza';//成功購買
-            echo "<h1>purchase successful2</h1>";
+            echo "<h1>purchase successful</h1>";
         }
         else
             echo "<h1>not enough money!</h1>";
