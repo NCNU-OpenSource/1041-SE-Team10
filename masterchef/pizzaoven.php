@@ -1,6 +1,10 @@
 <?php9
 require("config.php");
 ?>
+<?php
+
+
+?>
 <style type="text/css">
 <!--.game {
     position: absolute;
