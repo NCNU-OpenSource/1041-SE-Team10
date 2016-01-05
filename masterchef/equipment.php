@@ -80,24 +80,24 @@ ul li{
 <table class="equipment">
 <?php
 
-$sql = "select * from breadoven where uid='$id';";
+$sql = "select * from breadoven where amount>0";
 $results=mysqli_query($conn,$sql);
 while ($rs=mysqli_fetch_array($results)) {
-	if ($rs['bread1']>0){
+	if ($rs['amount']>0){
 		echo "<tr><td><img src =\"pics\bread1.png\"  width=\"150px\"></td>"; 
-		echo "<tr><td>" , $rs['bread1'] ,"</td>" ;
+		echo "<tr><td>" , $rs['amount'] ,"</td>" ;
 	}
-	if ($rs['bread2']>0){
+	if ($rs['amount']>0){
 		echo "<tr><td><img src =\"pics\bread2.png\"  width=\"150px\"></td>"; 
-		echo "<tr><td>" , $rs['bread2'] ,"</td>" ;
+		echo "<tr><td>" , $rs['amount'] ,"</td>" ;
 	}
-	if ($rs['bread3']>0){
+	if ($rs['amount']>0){
 		echo "<tr><td><img src =\"pics\bread3.png\"  width=\"150px\"></td>"; 
-		echo "<tr><td>" , $rs['bread3'] ,"</td>" ;
+		echo "<tr><td>" , $rs['amount'] ,"</td>" ;
 	}
-	if ($rs['bread4']>0){
+	if ($rs['amount']>0){
 		echo "<tr><td><img src =\"pics\bread4.png\"  width=\"150px\"></td>"; 
-		echo "<tr><td>" , $rs['bread4'] ,"</td>" ;
+		echo "<tr><td>" , $rs['amount'] ,"</td>" ;
 	}
 
 	echo "</tr>";
