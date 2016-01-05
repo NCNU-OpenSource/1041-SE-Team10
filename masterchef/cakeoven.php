@@ -53,7 +53,17 @@ require("config.php");
 				<img src ="pics\ovenhome.png" style="z-index:1" width="800px" id="bread">
 			</div>
 			<div id="draggable" class="ui-widget-content">
-				<p>Drag me to my target</p>
+            <?php
+                $select = "select * from cakeoven;";
+                $results=mysqli_query($conn,$select);
+                while($rs=mysqli_fetch_array($results))
+                {
+                    if($rs['amount']>0)
+                    {
+                        echo "<tr><td>" , $rs['name'];
+                    }
+                }
+            ?>
 			</div>
 		</div>
 			
