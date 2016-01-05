@@ -168,7 +168,8 @@ $(window).resize();
 <body>
 <div class="coinexp">
 <?php
-$sql2 = "select * from user ";
+$id = $_SESSION['uID'];
+$sql2 = "select * from user where id = '$id'";
 $results2=mysqli_query($conn,$sql2);
 $rs2=mysqli_fetch_array($results2);
 echo "<img src=\"pics\cash.png\" style=\"width:60px\" />：";
