@@ -176,7 +176,7 @@ $(window).resize();
 
 <table class="breadcategory">
 <tr><td><img src ="pics\bread1.png"  width="150px"></td>
-<td><img src ="pics\bread2.jpg"  width="150px"></td>
+<td><img src ="pics\bread2.png"  width="150px"></td>
 <td><img src ="pics\bread3.png"  width="150px"></td></tr>
 <tr><td>$50<br/><a class="js-open-modal btn" href="#" data-modal-id="buy1"><img src ="pics\buybutton.png"  width="100px"></a></td>
 <td>$60<br/><a class="js-open-modal btn" href="#" data-modal-id="buy2"><img src ="pics\buybutton.png"  width="100px"></a></td>
