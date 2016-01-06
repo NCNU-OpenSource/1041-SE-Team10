@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-01-06 09:37:49
+-- 產生時間： 2016-01-06 09:46:44
 -- 伺服器版本: 5.6.26
 -- PHP 版本： 5.6.12
 
@@ -108,20 +108,19 @@ INSERT INTO `cookieoven` (`uid`, `user`, `name`, `amount`, `exp`, `time`, `cash`
 --
 
 CREATE TABLE IF NOT EXISTS `oven` (
-  `id` int(11) NOT NULL,
-  `name` varchar(11) NOT NULL,
-  `amount` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `uid` varchar(11) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `breadoven` int(11) NOT NULL,
+  `cakeoven` int(11) NOT NULL,
+  `cookieoven` int(11) NOT NULL,
+  `pizzaoven` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- 資料表的匯出資料 `oven`
 --
 
-INSERT INTO `oven` (`id`, `name`, `amount`) VALUES
-(1, 'breadoven', 1),
-(2, 'cakeoven', 1),
-(3, 'cookieoven', 1),
-(4, 'pizzaoven', 1);
+INSERT INTO `oven` (`uid`, `breadoven`, `cakeoven`, `cookieoven`, `pizzaoven`) VALUES
+('kris', 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -237,12 +236,6 @@ ALTER TABLE `cookieoven`
   ADD PRIMARY KEY (`uid`);
 
 --
--- 資料表索引 `oven`
---
-ALTER TABLE `oven`
-  ADD PRIMARY KEY (`id`);
-
---
 -- 資料表索引 `pizzaoven`
 --
 ALTER TABLE `pizzaoven`
@@ -279,11 +272,6 @@ ALTER TABLE `cakeoven`
 --
 ALTER TABLE `cookieoven`
   MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- 使用資料表 AUTO_INCREMENT `oven`
---
-ALTER TABLE `oven`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- 使用資料表 AUTO_INCREMENT `pizzaoven`
 --
