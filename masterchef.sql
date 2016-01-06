@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-01-04 14:18:42
+-- 產生時間： 2016-01-06 09:37:49
 -- 伺服器版本: 5.6.26
 -- PHP 版本： 5.6.12
 
@@ -28,24 +28,24 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `breadoven` (
   `uid` int(11) NOT NULL,
+  `user` varchar(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `amount` int(11) NOT NULL,
   `exp` int(11) NOT NULL,
   `time` int(11) NOT NULL,
   `cash` int(11) NOT NULL,
-  `sold` int(11) NOT NULL,
-  `status` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `sold` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- 資料表的匯出資料 `breadoven`
 --
 
-INSERT INTO `breadoven` (`uid`, `name`, `amount`, `exp`, `time`, `cash`, `sold`, `status`) VALUES
-(1, 'bread1', 2, 30, 1, 50, 0, 0),
-(2, 'bread2', 4, 40, 2, 60, 0, 0),
-(3, 'bread3', 1, 50, 3, 70, 0, 0),
-(4, 'bread4', 1, 60, 4, 80, 0, 0);
+INSERT INTO `breadoven` (`uid`, `user`, `name`, `amount`, `exp`, `time`, `cash`, `sold`) VALUES
+(1, 'kris', 'bread1', 2, 30, 1, 50, 100),
+(3, 'kris', 'bread3', 1, 50, 3, 70, 140),
+(4, 'kris', 'bread4', 1, 60, 4, 80, 160),
+(5, 'kris', 'bread2', 4, 40, 2, 60, 120);
 
 -- --------------------------------------------------------
 
@@ -55,24 +55,24 @@ INSERT INTO `breadoven` (`uid`, `name`, `amount`, `exp`, `time`, `cash`, `sold`,
 
 CREATE TABLE IF NOT EXISTS `cakeoven` (
   `uid` int(11) NOT NULL,
+  `user` varchar(11) NOT NULL,
   `name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `amount` int(11) NOT NULL,
   `exp` int(11) NOT NULL,
   `time` int(11) NOT NULL,
   `cash` int(11) NOT NULL,
-  `sold` int(11) NOT NULL,
-  `status` int(11) NOT NULL
+  `sold` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- 資料表的匯出資料 `cakeoven`
 --
 
-INSERT INTO `cakeoven` (`uid`, `name`, `amount`, `exp`, `time`, `cash`, `sold`, `status`) VALUES
-(1, 'cake1', 2, 40, 1, 50, 0, 0),
-(2, 'cake2', 0, 50, 2, 60, 0, 0),
-(3, 'cake3', 0, 60, 3, 70, 0, 0),
-(4, 'cake4', 1, 70, 4, 80, 0, 0);
+INSERT INTO `cakeoven` (`uid`, `user`, `name`, `amount`, `exp`, `time`, `cash`, `sold`) VALUES
+(1, 'kris', 'cake1', 2, 40, 1, 50, 100),
+(2, 'kris', 'cake2', 0, 50, 2, 60, 120),
+(3, 'kris', 'cake3', 0, 60, 3, 70, 140),
+(4, 'kris', 'cake4', 1, 70, 4, 80, 160);
 
 -- --------------------------------------------------------
 
@@ -82,24 +82,24 @@ INSERT INTO `cakeoven` (`uid`, `name`, `amount`, `exp`, `time`, `cash`, `sold`, 
 
 CREATE TABLE IF NOT EXISTS `cookieoven` (
   `uid` int(11) NOT NULL,
+  `user` varchar(11) NOT NULL,
   `name` varchar(20) NOT NULL,
   `amount` int(11) NOT NULL,
   `exp` int(11) NOT NULL,
   `time` int(11) NOT NULL,
   `cash` int(11) NOT NULL,
-  `sold` int(11) NOT NULL,
-  `status` int(11) NOT NULL
+  `sold` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- 資料表的匯出資料 `cookieoven`
 --
 
-INSERT INTO `cookieoven` (`uid`, `name`, `amount`, `exp`, `time`, `cash`, `sold`, `status`) VALUES
-(1, 'cookie1', 0, 20, 1, 50, 0, 0),
-(2, 'cookie2', 1, 30, 2, 60, 0, 0),
-(3, 'cookie3', 1, 40, 3, 70, 0, 0),
-(4, 'cookie4', 0, 50, 4, 80, 0, 0);
+INSERT INTO `cookieoven` (`uid`, `user`, `name`, `amount`, `exp`, `time`, `cash`, `sold`) VALUES
+(1, 'kris', 'cookie1', 0, 20, 1, 50, 100),
+(2, 'kris', 'cookie2', 1, 30, 2, 60, 120),
+(3, 'kris', 'cookie3', 1, 40, 3, 70, 140),
+(4, 'kris', 'cookie4', 0, 50, 4, 80, 160);
 
 -- --------------------------------------------------------
 
@@ -131,24 +131,24 @@ INSERT INTO `oven` (`id`, `name`, `amount`) VALUES
 
 CREATE TABLE IF NOT EXISTS `pizzaoven` (
   `uid` int(11) NOT NULL,
+  `user` varchar(11) NOT NULL,
   `name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `amount` int(11) NOT NULL,
   `exp` int(11) NOT NULL,
   `time` int(11) NOT NULL,
   `cash` int(11) NOT NULL,
-  `sold` int(11) NOT NULL,
-  `status` int(11) NOT NULL
+  `sold` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- 資料表的匯出資料 `pizzaoven`
 --
 
-INSERT INTO `pizzaoven` (`uid`, `name`, `amount`, `exp`, `time`, `cash`, `sold`, `status`) VALUES
-(1, 'pizza1', 1, 50, 1, 50, 0, 0),
-(2, 'pizza2', 3, 60, 2, 60, 0, 0),
-(3, 'pizza3', 0, 70, 3, 70, 0, 0),
-(4, 'pizza4', 0, 80, 4, 80, 0, 0);
+INSERT INTO `pizzaoven` (`uid`, `user`, `name`, `amount`, `exp`, `time`, `cash`, `sold`) VALUES
+(1, 'kris', 'pizza1', 1, 50, 1, 50, 100),
+(2, 'kris', 'pizza2', 3, 60, 2, 60, 120),
+(3, 'kris', 'pizza3', 0, 70, 3, 70, 140),
+(4, 'kris', 'pizza4', 0, 80, 4, 80, 160);
 
 -- --------------------------------------------------------
 
@@ -201,18 +201,18 @@ CREATE TABLE IF NOT EXISTS `user` (
   `nickname` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gender` int(11) NOT NULL,
   `cash` int(11) NOT NULL,
-  `exp` int(11) NOT NULL,
-  `expup` int(11) NOT NULL,
-  `level` int(11) NOT NULL DEFAULT '1'
+  `exp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- 資料表的匯出資料 `user`
 --
 
-INSERT INTO `user` (`id`, `password`, `nickname`, `gender`, `cash`, `exp`, `expup`, `level`) VALUES
-('alan', '123', '維倫', 1, 178220, 500, 0, 1),
-('kris', '123', 'krisliu', 0, 19870, 0, 0, 1);
+INSERT INTO `user` (`id`, `password`, `nickname`, `gender`, `cash`, `exp`) VALUES
+('alan', '123', '維倫', 1, 178220, 500),
+('brian', '123', 'brian', 1, 200000, 0),
+('kris', '123', 'krisliu', 0, 19870, 0),
+('nora', '123', 'nora', 0, 200000, 0);
 
 --
 -- 已匯出資料表的索引
@@ -268,7 +268,7 @@ ALTER TABLE `user`
 -- 使用資料表 AUTO_INCREMENT `breadoven`
 --
 ALTER TABLE `breadoven`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- 使用資料表 AUTO_INCREMENT `cakeoven`
 --
