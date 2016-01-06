@@ -1,5 +1,6 @@
-<?php9
+<?php
 require("config.php");
+$id=$_SESSION['uID'];
 ?>
 <style type="text/css">
 <!--.game {
@@ -17,32 +18,117 @@ require("config.php");
     left:0px;
     top:0px;
 }
+.equipment{
+	position: absolute;
+	left:170px;
+	top:520px;
+}
+
+.modal-box {
+  display: none;
+  position: absolute;
+  
+  z-index: 1000;
+  width: 300px;
+  background: white;
+  border-bottom: 1px solid #aaa;
+  border-radius: 4px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-clip: padding-box;
+}
+@media (min-width: 32em) {
+
+.modal-box { width: 300px; position: absolute; left: 100px;}
+}
+
+.modal-box header,
+.modal-box .modal-header {
+  padding: 1.25em 1.5em;
+  border-bottom: 1px solid #ddd;
+}
+
+.modal-box header h3,
+.modal-box header h4,
+.modal-box .modal-header h3,
+.modal-box .modal-header h4 { margin: 0; }
+
+.modal-box .modal-body { padding: 2em 1.5em; }
+
+.modal-box footer,
+.modal-box .modal-footer {
+  padding: 1em;
+  border-top: 1px solid #ddd;
+  background: rgba(0, 0, 0, 0.02);
+  text-align: right;
+}
+
+.modal-overlay {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+a.close {
+  line-height: 1;
+  font-size: 1.5em;
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  text-decoration: none;
+  color: #bbb;
+}
+
+a.close:hover {
+  color: #222;
+  -webkit-transition: color 1s ease;
+  -moz-transition: color 1s ease;
+  transition: color 1s ease;
+}
+
 </style>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"> 
-		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-		
-		<link rel="stylesheet" href="css/style.css">
-		<style>
-		#draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; position: absolute; left: 20px; top: 500px;}
-		#droppable { width: 500px; height: 350px; padding: 0.5em; float: left; margin: 20px; position: absolute; left: 20px; top: 120px;}
-		</style>
-		<script>
-		$(function() {
-			$( "#draggable" ).draggable();
-			$( "#droppable" ).droppable({
-				drop: function( event, ui ) {
-					$( this )
-						.addClass( "ui-state-highlight" )
-						.find( "p" )
-							.html( "Dropped!" );
-				}
-			});
-		});
-		</script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+$(function(){
+
+var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
+
+	$('a[data-modal-id]').click(function(e) {
+		e.preventDefault();
+    $("body").append(appendthis);
+    $(".modal-overlay").fadeTo(500, 0.7);
+    //$(".js-modalbox").fadeIn(500);
+		var modalBox = $(this).attr('data-modal-id');
+		$('#'+modalBox).fadeIn($(this).data());
+	});  
+  
+  
+$(".js-modal-close, .modal-overlay").click(function() {
+    $(".modal-box, .modal-overlay").fadeOut(500, function() {
+        $(".modal-overlay").remove();
+    });
+ 
+});
+ 
+$(window).resize(function() {
+    $(".modal-box").css({
+        top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
+        left: ($(window).width() - $(".modal-box").outerWidth()) / 2
+    });
+});
+ 
+$(window).resize();
+ 
+});
+</script>
+
 </head>
 <html>
 <body>
@@ -52,14 +138,35 @@ require("config.php");
             <div id="droppable" class="ui-widget-header">
 				<img src ="pics\ovenhome.png" style="z-index:1" width="800px" id="bread">
 			</div>
-			<div id="draggable" class="ui-widget-content">
-				<p>Drag me to my target</p>
-			</div>
 		</div>
 			
 	</div>
-	
-</div>
 
+<div class="equipment">
+<table>
+<?php
+$sql = "select * from breadoven where amount>0;";
+$results=mysqli_query($conn,$sql); 
+echo "<tr>";
+while ($rs=mysqli_fetch_array($results)) {
+	$src = $rs['name'];
+	echo "<td><img src =\"pics\\{$src}.png\" width=\"110px\"></td>"; 
+	echo "<td>X" , $rs['amount'] ,"</td>" ;
+	
+}
+echo "</tr>";
+?>
+<tr><td><br/><a class="js-open-modal btn" href="#" data-modal-id="buy1"><img src ="pics\buybutton.png"  width="100px"></a></td>
+<div id="buy1" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">กั</a>
+        <h3>Do you want to cook this?</h3>
+    </header>
+        <div class="modal-body">
+            <p>Cook?</p>
+        </div>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">start</button></form> </footer>
+</div>
+</table>
+</div>
 </body>
 </html>
