@@ -27,7 +27,8 @@ $id=$_SESSION['uID'];
 .modal-box {
   display: none;
   position: absolute;
-  
+  left: 50px;
+  top: 100px;
   z-index: 1000;
   width: 300px;
   background: white;
@@ -39,7 +40,7 @@ $id=$_SESSION['uID'];
 }
 @media (min-width: 32em) {
 
-.modal-box { width: 300px; position: absolute; left: 100px;}
+.modal-box { width: 300px; position: absolute; left: 0px; top: 50px;}
 }
 
 .modal-box header,
@@ -150,15 +151,15 @@ $results=mysqli_query($conn,$sql);
 echo "<tr>";
 while ($rs=mysqli_fetch_array($results)) {
 	$src = $rs['name'];
-	echo "<td><img src =\"pics\\{$src}.png\" width=\"110px\"></td>"; 
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy1\"><img src =\"pics\\{$src}.png\" width=\"110px\"></a></td>"; 
 	echo "<td>X" , $rs['amount'] ,"</td>" ;
 	
 }
 echo "</tr>";
 ?>
-<tr><td><br/><a class="js-open-modal btn" href="#" data-modal-id="buy1"><img src ="pics\buybutton.png"  width="100px"></a></td>
+<tr><td><br/></a></td>
 <div id="buy1" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">กั</a>
+     <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">

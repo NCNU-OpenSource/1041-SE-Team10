@@ -55,107 +55,111 @@ $uid=$_SESSION['uID'];
 $select="select * from user;";
 $results=mysqli_query($conn,$select);
 $rs2=mysqli_fetch_array($results);
-$select2="select * from cakeoven where `uid` = '$uid';";
-$select3="select * from cookieoven where `uid`='$uid';";
-$select4="select * from breadoven where `uid`='$uid';";
-$select5="select * from pizzaoven where `uid`='$uid';";
-
+$select2="select * from cakeoven where `user` = '$uid';";
+$select3="select * from cookieoven where `user`='$uid';";
+$select4="select * from breadoven where `user`='$uid';";
+$select5="select * from pizzaoven where `user`='$uid';";
+mysqli_query($conn,$select2);
+mysqli_query($conn,$select3);
+mysqli_query($conn,$select4);
+mysqli_query($conn,$select5);
+echo "$uid";
 switch($ingredient)
 {
     case'cake1'://cake
         $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:cakeoven.php");
         
         break;
     case'cake2'://cake
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='2';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:cakeoven.php");
         
         break;
     case'cake3'://cake
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='3';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:cakeoven.php");
         
         break;
     case'cake4'://cake
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='4';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:cakeoven.php");
         
         break;
     case'bread1'://bread
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update breadoven set `amount`=`amount`-1 where `uid`='1';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:breadoven.php");
         
         break;
     case'bread2'://bread
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update breadoven set `amount`=`amount`-1 where `uid`='2';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:breadoven.php");
         
         break;
     case'bread3'://bread
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update breadoven set `amount`=`amount`-1 where `uid`='3';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:breadoven.php");
         
         break;
     case'bread4'://bread
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update breadoven set `amount`=`amount`-1 where `uid`='4';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:breadoven.php");
         
         break;
     case'cookie1'://cookie
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update cookieoven set `amount`=`amount`-1 where `uid`='1';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:cookieoven.php");
         
         break;
     case'cookie2'://cookie
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update cookieoven set `amount`=`amount`-1 where `uid`='2';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:cookieoven.php");
         
         break;
     case'cookie3'://cookie
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update cookieoven set `amount`=`amount`-1 where `uid`='3';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:cookieoven.php");
         
         break;
     case'cookie4'://cookie
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update cookieoven set `amount`=`amount`-1 where `uid`='4';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:cookieoven.php");
         
         break;
     case'pizza1'://pizza
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update pizzaoven set `amount`=`amount`-1 where `uid`='1';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:pizzaoven.php");
         
         break;
     case'pizza2'://pizza
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update pizzaoven set `amount`=`amount`-1 where `uid`='2';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:pizzaoven.php");
         
         break;
     case'pizza3'://pizza
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update pizzaoven set `amount`=`amount`-1 where `uid`='3';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:pizzaoven.php");
         
         break;
     case'pizza4'://pizza
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update pizzaoven set `amount`=`amount`-1 where `uid`='4';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
-        echo "<h1>start cook</h1>";
+        header("Location:pizzaoven.php");
         
         break;
 }
