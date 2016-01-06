@@ -168,8 +168,8 @@ $(window).resize();
 <body>
 <div class="coinexp">
 <?php
-$id = $_SESSION['uID'];
-$sql2 = "select * from user where id = '$id'";
+$uid = $_SESSION['uID'];
+$sql2 = "select * from user where id = '$uid';";
 $results2=mysqli_query($conn,$sql2);
 $rs2=mysqli_fetch_array($results2);
 echo "<img src=\"pics\cash.png\" style=\"width:60px\" />：";
@@ -184,42 +184,29 @@ echo $rs2['exp'];
 <!--if oven =0 -> locked, =1 -> unlocked -->
 <?php
     $uid=$_SESSION['uID'];
-    $sql = "select * from oven where `name`='breadoven';";
+    $sql = "select * from oven where `uid`='$uid';";
     mysqli_query($conn,$sql) or die("MySQL query error");
     $results=mysqli_query($conn,$sql);
     $rs=mysqli_fetch_array($results);
     
-    $sql2 = "select * from oven where `name`='cakeoven';";
-    mysqli_query($conn,$sql2) or die("MySQL query error2");
-    $results2=mysqli_query($conn,$sql2);
-    $rs2=mysqli_fetch_array($results2);
-    
-    $sql3 = "select * from oven where `name`='cookieoven';";
-    mysqli_query($conn,$sql3) or die("MySQL query error3");
-    $results3=mysqli_query($conn,$sql3);
-    $rs3=mysqli_fetch_array($results3);
-    
-    $sql4 = "select * from oven where `name`='pizzaoven';";
-    mysqli_query($conn,$sql4) or die("MySQL query error4");
-    $results4=mysqli_query($conn,$sql4);
-    $rs4=mysqli_fetch_array($results4);
-    if ($rs['amount']==0)
+    if ($rs['pizzaoven']==0){
+        echo "<a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buypizzaoven\"><img src=\"pics/pizzaovenlocked.png\" id=\"pizzaoven\" width=\"300px\"></a>";
+    }
+    else
+        echo "<a href=\"pizzaoven.php\"><img src=\"pics/pizzaovenunlocked.png\" id=\"pizzaoven\" width=\"300px\">";
+    if ($rs['breadoven']==0)
         echo "<a class=\"js-open-modal\" href=\"#\" data-modal-id=\"buybreadoven\"><img src=\"pics/breadovenlocked.png\" id=\"breadoven\" width=\"300px\"></a>";
     else
         echo "<a href=\"breadoven.php\"><img src=\"pics/breadovenunlocked.png\" id=\"breadoven\" width=\"300px\"></a>";
-    if ($rs2['amount']==0)
+    if ($rs['cakeoven']==0)
         echo "<a class=\"js-open-modal\" href=\"#\" data-modal-id=\"buycakeoven\"><img src=\"pics/cakeovenlocked.png\" id=\"cakeoven\" width=\"300px\"></a>";
     else
         echo "<a href=\"cakeoven.php\"><img src=\"pics/cakeovenunlocked.png\" id=\"cakeoven\" width=\"300px\"></a>";
-    if ($rs3['amount']==0)
+    if ($rs['cookieoven']==0)
         echo "<a class=\"js-open-modal\" href=\"#\" data-modal-id=\"buycookieoven\"><img src=\"pics/cookieovenlocked.png\" id=\"cookieoven\" width=\"300px\"></a>";
     else
         echo "<a href=\"cookieoven.php\"><img src=\"pics/cookieovenunlocked.png\" id=\"cookieoven\" width=\"300px\"></a>";
-	if ($rs4['amount']==0){
-        echo "<a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buypizzaoven\"><img src=\"pics/pizzaovenlocked.png\" id=\"3\" width=\"300px\"></a>";
-    }
-    else
-        echo "<a href=\"pizzaoven.php\"><img src=\"pics/pizzaovenunlocked.png\" id=\"4\" width=\"300px\">";
+	
 ?>
 <div id="buypizzaoven" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
