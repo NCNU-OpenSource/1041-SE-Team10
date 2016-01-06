@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2016-01-06 09:07:54
+-- 產生時間： 2016-01-06 09:12:35
 -- 伺服器版本: 5.6.26
 -- PHP 版本： 5.6.12
 
@@ -34,19 +34,18 @@ CREATE TABLE IF NOT EXISTS `breadoven` (
   `exp` int(11) NOT NULL,
   `time` int(11) NOT NULL,
   `cash` int(11) NOT NULL,
-  `sold` int(11) NOT NULL,
-  `status` int(11) NOT NULL
+  `sold` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- 資料表的匯出資料 `breadoven`
 --
 
-INSERT INTO `breadoven` (`id`, `uid`, `name`, `amount`, `exp`, `time`, `cash`, `sold`, `status`) VALUES
-(1, 'kris', 'bread1', 2, 30, 1, 50, 100, 0),
-(3, 'kris', 'bread3', 1, 50, 3, 70, 140, 0),
-(4, 'kris', 'bread4', 1, 60, 4, 80, 160, 0),
-(5, 'kris', 'bread2', 4, 40, 2, 60, 120, 0);
+INSERT INTO `breadoven` (`id`, `uid`, `name`, `amount`, `exp`, `time`, `cash`, `sold`) VALUES
+(1, 'kris', 'bread1', 2, 30, 1, 50, 100),
+(3, 'kris', 'bread3', 1, 50, 3, 70, 140),
+(4, 'kris', 'bread4', 1, 60, 4, 80, 160),
+(5, 'kris', 'bread2', 4, 40, 2, 60, 120);
 
 --
 -- 已匯出資料表的索引
