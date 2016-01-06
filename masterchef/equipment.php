@@ -70,11 +70,6 @@ ul li{
 <div class="Back" style="z-index:15">
 <a href="shop.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
-
-<div class="chef">
-<img src="pics\Chef-Clipart.png" width="250px">
-</div>
-
 <div class="bake">
 
 <table class="equipment">
