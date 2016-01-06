@@ -149,23 +149,65 @@ $(window).resize();
 $sql = "select * from breadoven where amount>0;";
 $results=mysqli_query($conn,$sql); 
 echo "<tr>";
+$i=1;
 while ($rs=mysqli_fetch_array($results)) {
 	$src = $rs['name'];
+    if ($i==1){
 	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy1\"><img src =\"pics\\{$src}.png\" width=\"110px\"></a></td>"; 
 	echo "<td>X" , $rs['amount'] ,"</td>" ;
+    }
+    else if ($i==2){
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy2\"><img src =\"pics\\{$src}.png\" width=\"110px\"></a></td>"; 
+	echo "<td>X" , $rs['amount'] ,"</td>" ;
+    }
+    else if ($i==3){
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy3\"><img src =\"pics\\{$src}.png\" width=\"110px\"></a></td>"; 
+	echo "<td>X" , $rs['amount'] ,"</td>" ;
+    }
+    else{
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy4\"><img src =\"pics\\{$src}.png\" width=\"110px\"></a></td>"; 
+	echo "<td>X" , $rs['amount'] ,"</td>" ;
+    }
+    $i++;
 	
 }
 echo "</tr>";
 ?>
-<tr><td><br/></a></td>
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook?</p>
+            <p>Cook this?</p>
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">start</button></form> </footer>
+</div>
+<div id="buy2" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Do you want to cook this?</h3>
+    </header>
+        <div class="modal-body">
+            <p>Cook this?</p>
+        </div>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread2">start</button></form> </footer>
+</div>
+<div id="buy3" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Do you want to cook this?</h3>
+    </header>
+        <div class="modal-body">
+            <p>Cook this?</p>
+        </div>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread3">start</button></form> </footer>
+</div>
+<div id="buy4" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Do you want to cook this?</h3>
+    </header>
+        <div class="modal-body">
+            <p>Cook this?</p>
+        </div>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">start</button></form> </footer>
 </div>
 </table>
 </div>
