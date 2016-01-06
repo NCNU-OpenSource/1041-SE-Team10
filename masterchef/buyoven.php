@@ -50,28 +50,28 @@ $uid=$_SESSION['uID'];
 <body>
 <div class="game">
 <?php
-$nickname=$_SESSION['nickname'];//使用者
-$select="select * from user where nickname='$nickname';";
+$uid = $_SESSION['uID'];
+$select="select * from user where id='$uid';";
 $results=mysqli_query($conn,$select);
 $rs2=mysqli_fetch_array($results);
 
 if ($rs2['cash']>=500){
     if ($oven=='pizzaoven') {
-        $sql = "update oven set `pizzaoven`='1' where id='$uid';";
+        $sql = "update oven set `pizzaoven`='1' where uid='$uid';";
         $sql2 = "update user set `cash`=`cash`-500 where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
         mysqli_query($conn,$sql2) or die("MySQL query error2");
         header("Location:home.php");
     } else echo "empty message id.";
     if ($oven=='breadoven') {
-        $sql = "update oven set `breadoven`='1' where id='$uid';";
+        $sql = "update oven set `breadoven`='1' where uid='$uid';";
         $sql2 = "update user set `cash`=`cash`-500 where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error3"); //執行SQL
         mysqli_query($conn,$sql2) or die("MySQL query error4");
         header("Location:home.php");
     } else echo "empty message id.";
     if ($oven=='cookieoven') {
-        $sql = "update oven set `cookieoven`='1' where id='$uid';";
+        $sql = "update oven set `cookieoven`='1' where uid='$uid';";
         $sql2 = "update user set `cash`=`cash`-500 where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error5"); //執行SQL
         mysqli_query($conn,$sql2) or die("MySQL query error6");
