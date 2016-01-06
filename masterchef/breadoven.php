@@ -128,21 +128,34 @@ $(window).resize(function() {
 $(window).resize();
  
 });
+
+//countdown
+var myVar;
+			function start() {
+				var sec = $("#count").val();
+				countdown(sec);
+			}
+			function stop() {
+				clearInterval(myVar);
+			}
+			function countdown(sec) {
+				myVar = setInterval(function() {
+					$('#countNum').text(sec);
+					sec = sec - 1;
+					if (sec < 0) {
+						stop();
+						$('p').html('<h1 id="boom">done cooking!</h1>');
+						$('#boom').fadeOut(1000);
+					}
+				}, 1000);
+			}
 </script>
 
 </head>
 <html>
 <body>
-    <div class="container">
-		<div>
-            <h3>Bread oven</h3>
-            <div id="droppable" class="ui-widget-header">
-				<img src ="pics\ovenhome.png" style="z-index:1" width="800px" id="bread">
-			</div>
-		</div>
-			
-	</div>
-
+<h3>Bread oven</h3>
+<img src ="pics\ovenhome.png" style="z-index:1" width="800px" id="bread"><span id="countNum"></span>
 <div class="equipment">
 <table>
 <?php
@@ -180,7 +193,7 @@ echo "</tr>";
         <div class="modal-body">
             <p>Cook this?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">start</button></form> </footer>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1" onclick="start()">start</button></form> </footer>
 </div>
 <div id="buy2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -189,7 +202,7 @@ echo "</tr>";
         <div class="modal-body">
             <p>Cook this?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread2">start</button></form> </footer>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread2" onclick="start()">start</button></form> </footer>
 </div>
 <div id="buy3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -198,7 +211,7 @@ echo "</tr>";
         <div class="modal-body">
             <p>Cook this?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread3">start</button></form> </footer>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread3" onclick="start()">start</button></form> </footer>
 </div>
 <div id="buy4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -207,7 +220,7 @@ echo "</tr>";
         <div class="modal-body">
             <p>Cook this?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">start</button></form> </footer>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4" onclick="start()">start</button></form> </footer>
 </div>
 </table>
 </div>
