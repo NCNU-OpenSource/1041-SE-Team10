@@ -39,7 +39,6 @@ $id=$_SESSION['uID'];
     opacity:0.9;
 }
 table {
-
     width: 700px;
 	height: 520px;
 	text-align: center;
@@ -48,6 +47,9 @@ table {
 }
 tr td{
 	font-size: 30px;
+	color: #191a00;
+	font-family: cursive;
+	font-weight: bolder;
 }
 ul li{
     list-style-type: none;
@@ -84,7 +86,7 @@ echo "<tr>";
 while ($rs=mysqli_fetch_array($results)) {
 	$src = $rs['name'];
 	echo "<td><img src =\"pics\\{$src}.png\" width=\"110px\"></td>"; 
-	echo "<td>" , $rs['amount'] ,"unit</td>" ;
+	echo "<td>x " , $rs['amount'] ,"</td>" ;
 	
 }
 echo "</tr>";
@@ -94,7 +96,7 @@ $results2=mysqli_query($conn,$sql2);
 while ($rs2=mysqli_fetch_array($results2)) {
 	$src2 = $rs2['name'];
 	echo "<td><img src =\"pics\\{$src2}.png\" width=\"110px\"></td>"; 
-	echo "<td>" , $rs2['amount'] ,"unit</td>" ;
+	echo "<td>x " , $rs2['amount'] ,"</td>" ;
 }
 echo "</tr>";
 echo "<tr>";
@@ -103,7 +105,7 @@ $results3=mysqli_query($conn,$sql3);
 while ($rs3=mysqli_fetch_array($results3)) {
 	$src3 = $rs3['name'];
 	echo "<td><img src =\"pics\\{$src3}.png\" width=\"110px\"></td>"; 
-	echo "<td>" , $rs3['amount'] ,"unit</td>" ;
+	echo "<td>x " , $rs3['amount'] ,"</td>" ;
 }
 echo "</tr>";
 echo "<tr>";
@@ -112,7 +114,7 @@ $results4=mysqli_query($conn,$sql4);
 while ($rs4=mysqli_fetch_array($results4)) {
 	$src4 = $rs4['name'];
 	echo "<td><img src =\"pics\\{$src4}.png\" width=\"110px\"></td>"; 
-	echo "<td>" , $rs4['amount'] ,"unit</td>" ;
+	echo "<td>x " , $rs4['amount'] ,"</td>" ;
 }
 echo "</tr>";
 ?>
