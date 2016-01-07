@@ -140,7 +140,7 @@ $(".js-modal-close, .modal-overlay").click(function() {
  
 $(window).resize(function() {
     $(".modal-box").css({
-        top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
+        top: ($(window).height() - $(".modal-box").outerHeight()) / 1000,
         left: ($(window).width() - $(".modal-box").outerWidth()) / 2
     });
 });

@@ -27,7 +27,7 @@ $id=$_SESSION['uID'];
 .modal-box {
   display: none;
   position: absolute;
-  
+
   z-index: 1000;
   width: 300px;
   background: white;
@@ -79,8 +79,8 @@ a.close {
   line-height: 1;
   font-size: 1.5em;
   position: absolute;
-  top: 5%;
-  right: 2%;
+  top: 50px;
+  right: 20px;
   text-decoration: none;
   color: #bbb;
 }
@@ -140,7 +140,7 @@ $(".js-modal-close, .modal-overlay").click(function() {
  
 $(window).resize(function() {
     $(".modal-box").css({
-        top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
+        top: ($(window).height() - $(".modal-box").outerHeight()) / 1000,
         left: ($(window).width() - $(".modal-box").outerWidth()) / 2
     });
 });
