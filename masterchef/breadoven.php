@@ -27,8 +27,7 @@ $id=$_SESSION['uID'];
 .modal-box {
   display: none;
   position: absolute;
-  left: 50px;
-  top: 100px;
+  
   z-index: 1000;
   width: 300px;
   background: white;
@@ -40,7 +39,7 @@ $id=$_SESSION['uID'];
 }
 @media (min-width: 32em) {
 
-.modal-box { width: 300px; position: absolute; left: 0px; top: 50px;}
+.modal-box { width: 300px; position: absolute; left: 100px;}
 }
 
 .modal-box header,
@@ -92,7 +91,28 @@ a.close:hover {
   -moz-transition: color 1s ease;
   transition: color 1s ease;
 }
-
+tr td{
+	font-size: 35px;
+	color: #333300;
+	font-family: cursive;
+	font-weight: bold;
+	text-shadow: 0px 0px 7px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 
+}
+.equipment{
+	left: 50px;
+	top: 448px;
+}
+h3{
+	font-size: 25px;
+	font-family: cursive;
+}
+.Back{
+    width: 150px;
+	height: 100px;
+    position: absolute;
+	left: 745px;
+	top: 528px;
+}
 </style>
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -128,101 +148,77 @@ $(window).resize(function() {
 $(window).resize();
  
 });
-
-//countdown
-var myVar;
-			function start() {
-				var sec = $("#count").val();
-				countdown(sec);
-			}
-			function stop() {
-				clearInterval(myVar);
-			}
-			function countdown(sec) {
-				myVar = setInterval(function() {
-					$('#countNum').text(sec);
-					sec = sec - 1;
-					if (sec < 0) {
-						stop();
-						$('p').html('<h1 id="boom">done cooking!</h1>');
-						$('#boom').fadeOut(1000);
-					}
-				}, 1000);
-			}
 </script>
 
 </head>
 <html>
 <body>
-<h3>Bread oven</h3>
-<img src ="pics\ovenhome.png" style="z-index:1" width="800px" id="bread"><span id="countNum"></span>
+    <div class="container">
+		<div>
+            <div id="droppable" class="ui-widget-header">
+				<img src ="pics\ovenhome.png" style="z-index:1" width="800px" id="bread">
+			</div>
+		</div>
+			
+	</div>
+
 <div class="equipment">
 <table>
 <?php
 $sql = "select * from breadoven where amount>0;";
 $results=mysqli_query($conn,$sql); 
 echo "<tr>";
-$i=1;
 while ($rs=mysqli_fetch_array($results)) {
 	$src = $rs['name'];
-    if ($i==1){
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy1\"><img src =\"pics\\{$src}.png\" width=\"110px\"></a></td>"; 
-	echo "<td>X" , $rs['amount'] ,"</td>" ;
-    }
-    else if ($i==2){
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy2\"><img src =\"pics\\{$src}.png\" width=\"110px\"></a></td>"; 
-	echo "<td>X" , $rs['amount'] ,"</td>" ;
-    }
-    else if ($i==3){
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy3\"><img src =\"pics\\{$src}.png\" width=\"110px\"></a></td>"; 
-	echo "<td>X" , $rs['amount'] ,"</td>" ;
-    }
-    else{
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy4\"><img src =\"pics\\{$src}.png\" width=\"110px\"></a></td>"; 
-	echo "<td>X" , $rs['amount'] ,"</td>" ;
-    }
-    $i++;
-	
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs['uid']}\">
+	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
+	echo "<td>x " , $rs['amount'] ,"</td>" ;
 }
-echo "</tr>";
+
+echo"</tr>";
 ?>
+
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook this?</p>
+            <p>Cook Bread?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1" onclick="start()">start</button></form> </footer>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">start</button></form> </footer>
 </div>
 <div id="buy2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook this?</p>
+            <p>Cook Bread?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread2" onclick="start()">start</button></form> </footer>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread2">start</button></form> </footer>
 </div>
 <div id="buy3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook this?</p>
+            <p>Cook Bread?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread3" onclick="start()">start</button></form> </footer>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread3">start</button></form> </footer>
 </div>
 <div id="buy4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook this?</p>
+            <p>Cook Bread?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4" onclick="start()">start</button></form> </footer>
+        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">start</button></form> </footer>
 </div>
+
 </table>
+</div>
+<div class="Back" style="z-index:15">
+<a href="home.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
 </body>
 </html>
