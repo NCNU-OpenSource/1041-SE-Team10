@@ -28,10 +28,13 @@ require("config.php");
     top: 470px;
 }
 .coinexp{
+	font-family: cursive;
+	font-size: 25px;
 	position: absolute;
-	left: 500px;
-	top: 490px;
+	left: 200px;
+	top: 440px;
     z-index:10;
+	text-shadow: 0px 0px 7px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff,
 }
 <!--.btn {
   font-size: 3vmin;
@@ -172,10 +175,12 @@ $uid = $_SESSION['uID'];
 $sql2 = "select * from user where id = '$uid';";
 $results2=mysqli_query($conn,$sql2);
 $rs2=mysqli_fetch_array($results2);
-echo "<img src=\"pics\cash.png\" style=\"width:60px\" />：";
+echo "<img src=\"pics\cash.png\" style=\"width:70px\" />：";
 echo $rs2['cash'];
-echo "<img src=\"pics\EXP.png\" style=\"width:60px\" />：";
+echo "<img src=\"pics\EXP.png\" style=\"width:90px\" />：";
 echo $rs2['exp'];
+echo "<img src=\"pics\level.png\" style=\"width:90px\" />：";
+echo $rs2['exp']/100;
 ?>
 </div>
 <div class="game">
