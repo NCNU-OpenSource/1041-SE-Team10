@@ -63,97 +63,97 @@ $select5="select * from pizzaoven where `uid`='$uid';";
 switch($ingredient)
 {
     case'cake1'://cake
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update cakeoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='1';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:cakeoven.php");
         
         break;
     case'cake2'://cake
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='2';";
+        $sql = "update cakeoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='2';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:cakeoven.php");
         
         break;
     case'cake3'://cake
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='3';";
+        $sql = "update cakeoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='3';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:cakeoven.php");
         
         break;
     case'cake4'://cake
-        $sql = "update cakeoven set `amount`=`amount`-1 where `uid`='4';";
+        $sql = "update cakeoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='4';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:cakeoven.php");
         
         break;
     case'bread1'://bread
-        $sql = "update breadoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update breadoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='1';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:breadoven.php");
         
         break;
     case'bread2'://bread
-        $sql = "update breadoven set `amount`=`amount`-1 where `uid`='2';";
+        $sql = "update breadoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='2';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:breadoven.php");
         
         break;
     case'bread3'://bread
-        $sql = "update breadoven set `amount`=`amount`-1 where `uid`='3';";
+        $sql = "update breadoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='3';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:breadoven.php");
         
         break;
     case'bread4'://bread
-        $sql = "update breadoven set `amount`=`amount`-1 where `uid`='4';";
+        $sql = "update breadoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='4';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:breadoven.php");
         
         break;
     case'cookie1'://cookie
-        $sql = "update cookieoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update cookieoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='1';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:cookieoven.php");
         
         break;
     case'cookie2'://cookie
-        $sql = "update cookieoven set `amount`=`amount`-1 where `uid`='2';";
+        $sql = "update cookieoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='2';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:cookieoven.php");
         
         break;
     case'cookie3'://cookie
-        $sql = "update cookieoven set `amount`=`amount`-1 where `uid`='3';";
+        $sql = "update cookieoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='3';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:cookieoven.php");
         
         break;
     case'cookie4'://cookie
-        $sql = "update cookieoven set `amount`=`amount`-1 where `uid`='4';";
+        $sql = "update cookieoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='4';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:cookieoven.php");
         
         break;
     case'pizza1'://pizza
-        $sql = "update pizzaoven set `amount`=`amount`-1 where `uid`='1';";
+        $sql = "update pizzaoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='1';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:pizzaoven.php");
         
         break;
     case'pizza2'://pizza
-        $sql = "update pizzaoven set `amount`=`amount`-1 where `uid`='2';";
+        $sql = "update pizzaoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='2';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:pizzaoven.php");
         
         break;
     case'pizza3'://pizza
-        $sql = "update pizzaoven set `amount`=`amount`-1 where `uid`='3';";
+        $sql = "update pizzaoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='3';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:pizzaoven.php");
         
         break;
     case'pizza4'://pizza
-        $sql = "update pizzaoven set `amount`=`amount`-1 where `uid`='4';";
+        $sql = "update pizzaoven set `amount`=`amount`-1 ,`status`= 1 where `uid`='4';";
         mysqli_query($conn,$sql) or die("MySQL query error"); 
         header("Location:pizzaoven.php");
         
