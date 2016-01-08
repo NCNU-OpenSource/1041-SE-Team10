@@ -187,7 +187,7 @@ $(window).resize();
 </div>
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
-        <h3>Buy This Cake Ingredient?</h3>
+        <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
             <p>Do you wish you buy this ingredient packet for $50?</p>
