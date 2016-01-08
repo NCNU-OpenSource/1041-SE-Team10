@@ -173,19 +173,41 @@ $(window).resize();
 </div>
 
 <div class="bake" >
-
 <table class="breadcategory">
-<tr><td><img src ="pics\bread1.png"  width="150px"></td>
-<td><img src ="pics\bread2.png"  width="150px"></td>
-<td><img src ="pics\bread3.png"  width="150px"></td></tr>
-<tr><td>$50<br/><a class="js-open-modal btn" href="#" data-modal-id="buy1"><img src ="pics\buybutton.png"  width="100px"></a></td>
-<td>$60<br/><a class="js-open-modal btn" href="#" data-modal-id="buy2"><img src ="pics\buybutton.png"  width="100px"></a></td>
-<td>$70<br/><a class="js-open-modal btn" href="#" data-modal-id="buy3"><img src ="pics\buybutton.png"  width="100px"></a></td></tr>
-<tr><td><img src ="pics\bread4.png" style="z-index:10" width="150px"></td>
-<tr><td>$80<br/><a class="js-open-modal btn" href="#" data-modal-id="buy4"><img src ="pics\buybutton.png"  width="100px"></a></td>
-</tr>
-</table>
+<?php
+    $sql = "select * from user;";
+    mysqli_query($conn,$sql) or die("MySQL query error");
+    $results=mysqli_query($conn,$sql);
+    $rs=mysqli_fetch_array($results);
+	if($rs['exp']>=0){
+		echo "<tr><td><img src=\"pics\bread1.png\" width=\"150px\"></td>";
+	}
+	if($rs['exp']>=200){
+		echo "<td><img src =\"pics\bread2.png\" width=\"150px\"></td>";
+	}
+	if($rs['exp']>=400){
+		echo "<td><img src =\"pics\bread3.png\" width=\"150px\"></td></tr>";
+	}
+	if($rs['exp']>=0){
+		echo "<tr><td>$50<br/><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy1\"><img src =\"pics\buybutton.png\"  width=\"100px\"></a></td>";
+	}
+    if($rs['exp']>=200){	
+		echo "<td>$60<br/><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy2\"><img src =\"pics\buybutton.png\"  width=\"100px\"></a></td>";
+    }
+	if($rs['exp']>=400){
+        echo "<td>$70<br/><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy3\"><img src =\"pics\buybutton.png\"  width=\"100px\"></a></td></tr>";
+    }    
+	if($rs['exp']>=600){	
+	    echo "<tr><td><img src =\"pics\bread4.png\" style=\"z-index:10\" width=\"150px\"></td>";
+    }
+    if($rs['exp']>=600){
+    echo "<tr><td>$80<br/><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy4\"><img src =\"pics\buybutton.png\"  width=\"100px\"></a></td>";
+    }
+	echo "</tr>";
 
+
+?>
+</table>
 </div>
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
@@ -222,6 +244,7 @@ $(window).resize();
             <p>Do you wish you buy this ingredient packet for $80?</p>
         </div>
         <footer><form method="post" action="buyingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">buy</button></form> </footer>
+
 </div>
 </body>
 </html>
