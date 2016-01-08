@@ -113,6 +113,11 @@ h3{
 	left: 745px;
 	top: 528px;
 }
+.uncook{
+	position: absolute;
+	left: 360px;
+	top: 170px;
+}
 </style>
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -161,6 +166,18 @@ $(window).resize();
 		</div>
 			
 	</div>
+    
+    
+<div class="uncook">
+<?php
+$sql2 = "select * from breadoven";
+$results2=mysqli_query($conn,$sql2);
+while ($rs2=mysqli_fetch_array($results2)) {
+if($rs2['status']==1)
+    echo"<img src=\"pics\\uncook.png\" width=\"110px\">;";
+}
+?>
+</div>
 
 <div class="equipment">
 <table>
@@ -170,7 +187,11 @@ $results=mysqli_query($conn,$sql);
 echo "<tr>";
 while ($rs=mysqli_fetch_array($results)) {
 	$src = $rs['name'];
+	if($rs['status']==0)
 	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs['uid']}\">
+	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
+	if($rs['status']==1)
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"notbuy{$rs['uid']}\">
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
 	echo "<td>x " , $rs['amount'] ,"</td>" ;
 }
@@ -214,7 +235,42 @@ echo"</tr>";
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">start</button></form> </footer>
 </div>
-
+<div id="notbuy1" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Only can cook one bread</h3>
+    </header>
+        <div class="modal-body">
+            <p>Please Wait</p>
+        </div>
+        <footer><form method="post" action="breadoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">back</button></form> </footer>
+</div>
+<div id="notbuy2" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Only can cook one bread</h3>
+    </header>
+        <div class="modal-body">
+            <p>Please Wait</p>
+        </div>
+        <footer><form method="post" action="breadoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">back</button></form> </footer>
+</div>
+<div id="notbuy3" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Only can cook one bread</h3>
+    </header>
+        <div class="modal-body">
+            <p>Please Wait</p>
+        </div>
+        <footer><form method="post" action="breadoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">back</button></form> </footer>
+</div>
+<div id="notbuy4" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Only can cook one bread</h3>
+    </header>
+        <div class="modal-body">
+            <p>Please Wait</p>
+        </div>
+        <footer><form method="post" action="breadoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">back</button></form> </footer>
+</div>
 </table>
 </div>
 <div class="Back" style="z-index:15">
