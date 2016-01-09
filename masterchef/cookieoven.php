@@ -198,6 +198,7 @@ $(window).resize();
         }
     }
     ?>
+    
     <div id="cookie1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Finish!</h3>
@@ -205,11 +206,12 @@ $(window).resize();
         <div class="modal-body">
             <p>you got $100 & 20 exp!</p>
         </div>
+        <!--放在這，如果加if-->
         <div id="countdown" class="countdownHolder"></div>
-        <!--拿來複製用的，因為不知道要放php還是html
+        <!--底下2行是拿來複製用的，因為不知道要放php還是html
         <!--<footer><form method="post" action="sold.php"><button type="submit" class="btn" btn-small js-modal-close name="id" value="cookie1">ok</button></form></footer>-->
         <!--"<footer><form method='post' action='sold.php'><button type='submit' class='btn btn-small js-modal-close' name='id' value='cookie1'>ok</button></form></footer>";-->
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn" btn-small js-modal-close name="id" value="cookie1">ok</button></form></footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">ok</button></form></footer>
     </div>
     <div id="cookie2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -240,8 +242,7 @@ $(window).resize();
     </div>
     </table>
 </div>
-	
-	
+
 <div class="equipment">
 <table>
 <?php
@@ -268,7 +269,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
 
 echo"</tr>";
 ?>
-
+<!--不然就是放在這，但是這樣變成只要到此php就開始倒數，一樣是找不到變數的問題-->
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
