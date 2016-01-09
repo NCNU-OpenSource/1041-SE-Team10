@@ -115,7 +115,7 @@ h3{
 }
 .uncook{
 	position: absolute;
-	left: 360px;
+	left: 189px;
 	top: 170px;
 }
 </style>
@@ -181,14 +181,14 @@ while ($rs2=mysqli_fetch_array($results2)) {
     $nickname = $rs2['name'];
     if($rs2['status']==1)
     {
-        if($nickname == 'pizza1')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'pizza2')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'pizza3')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'pizza4')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+        if($nickname == 'bread1')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+        if($nickname == 'bread2')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+        if($nickname == 'bread3')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+        if($nickname == 'bread4')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
     }
 }
 ?>
@@ -199,7 +199,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $100 & 50 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">ok</button></form> </footer>
     </div>
     <div id="bread2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -208,7 +208,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $120 & 60 exp</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread2">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread2">ok</button></form> </footer>
     </div>
     <div id="bread3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -217,7 +217,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $140 & 70 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread3">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread3">ok</button></form> </footer>
     </div>
     <div id="bread4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -226,7 +226,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $160 & 80 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">ok</button></form> </footer>
     </div>
     </table>
 </div>
