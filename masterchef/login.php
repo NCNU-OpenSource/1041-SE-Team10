@@ -75,6 +75,14 @@ else{
     background:#F7F2E0;
 }
 </style>
+
+<script>
+
+var bs=new Audio();
+bs.src="Music03.mp3";
+
+</script>
+
 <body id="">
 <div class="game">
 
@@ -91,5 +99,10 @@ Password: <input type="password" name="pwd"><br />
 </table>
 </p>
 </div>
+
+<body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
+<audio src="Music03.mp3" autoplay="true" loop="true" 
+hidden="true"></audio>
+
 </body>
 </html>

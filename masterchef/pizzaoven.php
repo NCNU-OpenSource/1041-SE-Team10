@@ -122,6 +122,10 @@ h3{
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
+
+var bs=new Audio();
+bs.src="Music01.mp3";
+
 $(function(){
 
 var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
@@ -194,7 +198,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $100 & 50 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">ok</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">start</button></form> </footer>
     </div>
     <div id="pizza2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -203,7 +207,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $120 & 60 exp</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza2">ok</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza2">start</button></form> </footer>
     </div>
     <div id="pizza3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -212,7 +216,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $140 & 70 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza3">ok</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza3">start</button></form> </footer>
     </div>
     <div id="pizza4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -221,7 +225,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $160 & 80 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza4">ok</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza4">start</button></form> </footer>
     </div>
     </table>
 </div>
@@ -324,5 +328,8 @@ echo"</tr>";
 <div class="Back" style="z-index:15">
 <a href="home.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
+<body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
+<audio src="Music01.mp3" autoplay="true" loop="true" 
+hidden="true"></audio>
 </body>
 </html>

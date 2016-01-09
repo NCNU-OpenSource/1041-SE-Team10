@@ -115,13 +115,17 @@ h3{
 }
 .uncook{
 	position: absolute;
-	left: 189px;
+	left: 360px;
 	top: 170px;
 }
 </style>
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
+
+var bs=new Audio();
+bs.src="Music01.mp3";
+
 $(function(){
 
 var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
@@ -168,62 +172,14 @@ $(window).resize();
 	</div>
 
 <div class="uncook">
-<table>
 <?php
 $sql2 = "select * from cookieoven";
 $results2=mysqli_query($conn,$sql2);
 while ($rs2=mysqli_fetch_array($results2)) {
-    $nickname = $rs2['name'];
-    if($rs2['status']==1)
-    {
-        if($nickname == 'cookie1')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"coockie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'cookie2')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"coockie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'cookie3')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"coockie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'cookie4')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"coockie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-    }
+if($rs2['status']==1)
+    echo"<img src=\"pics\\uncook.png\" width=\"110px\">;";
 }
 ?>
-    <div id="cookie1" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $100 & 20 exp!</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">ok</button></form> </footer>
-    </div>
-    <div id="cookie2" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $120 & 30 exp</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie2">ok</button></form> </footer>
-    </div>
-    <div id="cookie3" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $140 & 40 exp!</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie3">ok</button></form> </footer>
-    </div>
-    <div id="cookie4" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $160 & 50 exp!</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie4">ok</button></form> </footer>
-    </div>
-    </table>
 </div>
 	
 	
@@ -324,5 +280,8 @@ echo"</tr>";
 <div class="Back" style="z-index:15">
 <a href="home.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
+<body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
+<audio src="Music01.mp3" autoplay="true" loop="true" 
+hidden="true"></audio>
 </body>
 </html>

@@ -5,6 +5,13 @@
 <title>帳號申請</title>
 </head>
 
+<script>
+
+var bs=new Audio();
+bs.src="Music03.mp3";
+
+</script>
+
 <body>
 
 <p>帳號申請</p>
@@ -42,5 +49,10 @@ if ($uid) {
 ?>
 </p>
 <p><a href="register.php">回注冊頁面</a> </p>
+
+<body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
+<audio src="Music03.mp3" autoplay="true" loop="true" 
+hidden="true"></audio>
+
 </body>
 </html>

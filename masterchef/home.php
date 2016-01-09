@@ -135,7 +135,7 @@ a.close:hover {
 <script>
 
 var bs=new Audio();
-bs.src="Background music.mp3";
+bs.src="Music04.mp3";
 
 $(function(){
 
@@ -254,7 +254,7 @@ echo floor($rs2['exp']/100);
         <footer><form method="post" action="buyoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookieoven">buy</button></form> </footer>
 </div>
 <body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
-<audio src="Background music.mp3" autoplay="true" loop="true" 
+<audio src="Music04.mp3" autoplay="true" loop="true" 
 hidden="true"></audio>
 </body>
 </html>
