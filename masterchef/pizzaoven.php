@@ -115,7 +115,7 @@ h3{
 }
 .uncook{
 	position: absolute;
-	left: 189px;
+	left: 360px;
 	top: 170px;
 }
 </style>
@@ -233,23 +233,30 @@ while ($rs2=mysqli_fetch_array($results2)) {
 <table>
 <?php
 $sql = "select * from pizzaoven where amount>0;";
-$results=mysqli_query($conn,$sql); 
+$results=mysqli_query($conn,$sql);
+$sql2 = "select * from pizzaoven where amount>0;";
+$results2=mysqli_query($conn,$sql2);  
+$total = 0;  //設total來檢測status是否有1 有1者 則不能再烤 為0者 則可以進烤箱
 echo "<tr>";
 while ($rs=mysqli_fetch_array($results)) {
-	$src = $rs['name'];
-    /*當status=0，可以買材料放進烤箱*/
-	if($rs['status']==0)
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs['uid']}\">
-	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
-	if($rs['status']==1)
-    /*當status=1，顯示燒等再放進烤箱*/
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"notbuy{$rs['uid']}\">
-	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
-	echo "<td>x " , $rs['amount'] ,"</td>" ;
+    $total += $rs['status'];
 }
+while ($rs2=mysqli_fetch_array($results2)) {
+	
+	$src = $rs2['name'];
+	if($total==0)
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs2['uid']}\">
+	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
+	if($total==1)
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"notbuy{$rs2['uid']}\">
+	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
+	echo "<td>x " , $rs2['amount'] ,"</td>" ;
+}
+
 echo"</tr>";
 ?>
-<!--當status=0，可以買材料放進烤箱-->
+<!--當total=0，可以買材料放進烤箱-->
+<!--當total=1，不能買材料放進烤箱-->
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
