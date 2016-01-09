@@ -196,7 +196,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $100 & 50 exp!</p>
+            <p>you got $100 & 20 exp!</p>
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">ok</button></form> </footer>
     </div>
@@ -205,7 +205,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $120 & 60 exp</p>
+            <p>you got $120 & 30 exp</p>
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie2">ok</button></form> </footer>
     </div>
@@ -214,7 +214,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $140 & 70 exp!</p>
+            <p>you got $140 & 40 exp!</p>
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie3">ok</button></form> </footer>
     </div>
@@ -223,7 +223,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $160 & 80 exp!</p>
+            <p>you got $160 & 50 exp!</p>
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie4">ok</button></form> </footer>
     </div>
