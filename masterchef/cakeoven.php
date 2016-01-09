@@ -122,6 +122,10 @@ h3{
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
+
+var bs=new Audio();
+bs.src="Music01.mp3";
+
 $(function(){
 
 var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
@@ -324,5 +328,10 @@ echo"</tr>";
 <div class="Back" style="z-index:15">
 <a href="home.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
+
+<body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
+<audio src="Music01.mp3" autoplay="true" loop="true" 
+hidden="true"></audio>
+
 </body>
 </html>
