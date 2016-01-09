@@ -187,7 +187,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
     }
 }
 ?>
-    <div id="pizza1" class="modal-box">
+    <div id="cookie1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Finish!</h3>
     </header>
@@ -196,7 +196,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">ok</button></form> </footer>
     </div>
-    <div id="pizza2" class="modal-box">
+    <div id="cookie2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Finish!</h3>
     </header>
@@ -205,7 +205,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie2">ok</button></form> </footer>
     </div>
-    <div id="pizza3" class="modal-box">
+    <div id="cookie3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Finish!</h3>
     </header>
@@ -214,7 +214,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie3">ok</button></form> </footer>
     </div>
-    <div id="pizza4" class="modal-box">
+    <div id="cookie4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Finish!</h3>
     </header>
