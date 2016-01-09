@@ -55,10 +55,11 @@ $uid=$_SESSION['uID'];
 $select="select * from user;";
 $results=mysqli_query($conn,$select);
 $rs2=mysqli_fetch_array($results);
+/*
 $select2="select * from cakeoven where `uid` = '$uid';";
 $select3="select * from cookieoven where `uid`='$uid';";
 $select4="select * from breadoven where `uid`='$uid';";
-$select5="select * from pizzaoven where `uid`='$uid';";
+$select5="select * from pizzaoven where `uid`='$uid';";*/
 
 switch($ingredient)
 {

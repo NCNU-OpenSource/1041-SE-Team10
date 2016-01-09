@@ -115,7 +115,7 @@ h3{
 }
 .uncook{
 	position: absolute;
-	left: 360px;
+	left: 189px;
 	top: 170px;
 }
 </style>
@@ -168,17 +168,63 @@ $(window).resize();
 	</div>
 
 <div class="uncook">
+<table>
 <?php
 $sql2 = "select * from pizzaoven";
 $results2=mysqli_query($conn,$sql2);
 while ($rs2=mysqli_fetch_array($results2)) {
-if($rs2['status']==1)
-    echo"<img src=\"pics\\uncook.png\" width=\"110px\">;";
+    $nickname = $rs2['name'];
+    if($rs2['status']==1)
+    {
+        if($nickname == 'pizza1')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+        if($nickname == 'pizza2')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+        if($nickname == 'pizza3')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+        if($nickname == 'pizza4')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+    }
 }
 ?>
+	<div id="pizza1" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Finish!</h3>
+    </header>
+        <div class="modal-body">
+            <p>you got $100 & 50 exp!</p>
+        </div>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">start</button></form> </footer>
+    </div>
+    <div id="pizza2" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Finish!</h3>
+    </header>
+        <div class="modal-body">
+            <p>you got $120 & 60 exp</p>
+        </div>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza2">start</button></form> </footer>
+    </div>
+    <div id="pizza3" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Finish!</h3>
+    </header>
+        <div class="modal-body">
+            <p>you got $140 & 70 exp!</p>
+        </div>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza3">start</button></form> </footer>
+    </div>
+    <div id="pizza4" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Finish!</h3>
+    </header>
+        <div class="modal-body">
+            <p>you got $160 & 80 exp!</p>
+        </div>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza4">start</button></form> </footer>
+    </div>
+    </table>
 </div>
-	
-	
 <div class="equipment">
 <table>
 <?php
@@ -187,18 +233,19 @@ $results=mysqli_query($conn,$sql);
 echo "<tr>";
 while ($rs=mysqli_fetch_array($results)) {
 	$src = $rs['name'];
+    /*當status=0，可以買材料放進烤箱*/
 	if($rs['status']==0)
 	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs['uid']}\">
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
 	if($rs['status']==1)
+    /*當status=1，顯示燒等再放進烤箱*/
 	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"notbuy{$rs['uid']}\">
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
 	echo "<td>x " , $rs['amount'] ,"</td>" ;
 }
-
 echo"</tr>";
 ?>
-
+<!--當status=0，可以買材料放進烤箱-->
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
@@ -235,6 +282,7 @@ echo"</tr>";
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza4">start</button></form> </footer>
 </div>
+<!--當status=1，顯示燒等再放進烤箱-->
 <div id="notbuy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Only can cook one pizza</h3>
@@ -251,7 +299,7 @@ echo"</tr>";
         <div class="modal-body">
             <p>Please Wait</p>
         </div>
-        <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">back</button></form> </footer>
+        <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza2">back</button></form> </footer>
 </div>
 <div id="notbuy3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -260,7 +308,7 @@ echo"</tr>";
         <div class="modal-body">
             <p>Please Wait</p>
         </div>
-        <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">back</button></form> </footer>
+        <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza3">back</button></form> </footer>
 </div>
 <div id="notbuy4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -269,7 +317,7 @@ echo"</tr>";
         <div class="modal-body">
             <p>Please Wait</p>
         </div>
-        <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">back</button></form> </footer>
+        <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza4">back</button></form> </footer>
 </div>
 </table>
 </div>
