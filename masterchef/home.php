@@ -184,7 +184,7 @@ echo $rs2['cash'];
 echo "<img src=\"pics\EXP.png\" style=\"width:90px\" />：";
 echo $rs2['exp'];
 echo "<img src=\"pics\level.png\" style=\"width:90px\" />：";
-echo $rs2['exp']/100;
+echo floor($rs2['exp']/100);
 ?>
 </div>
 <div class="game">
