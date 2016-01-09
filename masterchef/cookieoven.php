@@ -194,7 +194,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $100 & 20 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">ok</button></form> </footer>
     </div>
     <div id="pizza2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -203,7 +203,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $120 & 30 exp</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie2">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie2">ok</button></form> </footer>
     </div>
     <div id="pizza3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -212,7 +212,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $140 & 40 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie3">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie3">ok</button></form> </footer>
     </div>
     <div id="pizza4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -221,7 +221,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $160 & 50 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie4">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie4">ok</button></form> </footer>
     </div>
     </table>
 </div>

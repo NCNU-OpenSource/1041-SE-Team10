@@ -184,9 +184,8 @@ while ($rs2=mysqli_fetch_array($results2)) {
             echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cake{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
         if($nickname == 'cake4')
             echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cake{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-    }
-}
-    
+    }   
+
 }
 ?>
     <div id="pizza1" class="modal-box">
@@ -196,7 +195,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $100 & 40 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake1">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake1">ok</button></form> </footer>
     </div>
     <div id="pizza2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -205,7 +204,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $120 & 50 exp</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake2">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake2">ok</button></form> </footer>
     </div>
     <div id="pizza3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -214,7 +213,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $140 & 60 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake3">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake3">ok</button></form> </footer>
     </div>
     <div id="pizza4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -223,7 +222,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <div class="modal-body">
             <p>you got $160 & 70 exp!</p>
         </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake4">start</button></form> </footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake4">ok</button></form> </footer>
     </div>
     </table>
 </div>
