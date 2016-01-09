@@ -172,14 +172,62 @@ $(window).resize();
 	</div>
 
 <div class="uncook">
+<table>
 <?php
 $sql2 = "select * from cookieoven";
 $results2=mysqli_query($conn,$sql2);
 while ($rs2=mysqli_fetch_array($results2)) {
-if($rs2['status']==1)
-    echo"<img src=\"pics\\uncook.png\" width=\"110px\">;";
+    $nickname = $rs2['name'];
+    if($rs2['status']==1)
+    {
+        if($nickname == 'pizza1')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+        if($nickname == 'pizza2')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+        if($nickname == 'pizza3')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+        if($nickname == 'pizza4')
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+    }
 }
 ?>
+    <div id="cookie1" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Finish!</h3>
+    </header>
+        <div class="modal-body">
+            <p>you got $100 & 50 exp!</p>
+        </div>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">start</button></form> </footer>
+    </div>
+    <div id="cookie2" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Finish!</h3>
+    </header>
+        <div class="modal-body">
+            <p>you got $120 & 60 exp</p>
+        </div>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie2">start</button></form> </footer>
+    </div>
+    <div id="cookie3" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Finish!</h3>
+    </header>
+        <div class="modal-body">
+            <p>you got $140 & 70 exp!</p>
+        </div>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie3">start</button></form> </footer>
+    </div>
+    <div id="cookie4" class="modal-box">
+     <header> <a href="#" class="js-modal-close close">x</a>
+        <h3>Finish!</h3>
+    </header>
+        <div class="modal-body">
+            <p>you got $160 & 80 exp!</p>
+        </div>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie4">start</button></form> </footer>
+    </div>
+    </table>
 </div>
 	
 	
@@ -202,6 +250,7 @@ while ($rs=mysqli_fetch_array($results)) {
 
 echo"</tr>";
 ?>
+
 
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
