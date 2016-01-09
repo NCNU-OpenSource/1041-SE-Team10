@@ -115,7 +115,7 @@ h3{
 }
 .uncook{
 	position: absolute;
-	left: 189px;
+	left: 360px;
 	top: 170px;
 }
 </style>
@@ -235,17 +235,24 @@ while ($rs2=mysqli_fetch_array($results2)) {
 <table>
 <?php
 $sql = "select * from cakeoven where amount>0;";
-$results=mysqli_query($conn,$sql); 
+$results=mysqli_query($conn,$sql);
+$sql2 = "select * from cakeoven where amount>0;";
+$results2=mysqli_query($conn,$sql2);  
+$total = 0;
 echo "<tr>";
 while ($rs=mysqli_fetch_array($results)) {
-	$src = $rs['name'];
-	if($rs['status']==0)
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs['uid']}\">
+    $total += $rs['status'];
+}
+while ($rs2=mysqli_fetch_array($results2)) {
+	
+	$src = $rs2['name'];
+	if($total==0)
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs2['uid']}\">
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
-	if($rs['status']==1)
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"notbuy{$rs['uid']}\">
+	if($total==1)
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"notbuy{$rs2['uid']}\">
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
-	echo "<td>x " , $rs['amount'] ,"</td>" ;
+	echo "<td>x " , $rs2['amount'] ,"</td>" ;
 }
 
 echo"</tr>";
