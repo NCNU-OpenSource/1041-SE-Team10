@@ -115,7 +115,7 @@ h3{
 }
 .uncook{
 	position: absolute;
-	left: 189px;
+	left: 360px;
 	top: 170px;
 }
 </style>
@@ -173,62 +173,14 @@ $(window).resize();
     
     
 <div class="uncook">
-<table>
 <?php
 $sql2 = "select * from breadoven";
 $results2=mysqli_query($conn,$sql2);
 while ($rs2=mysqli_fetch_array($results2)) {
-    $nickname = $rs2['name'];
-    if($rs2['status']==1)
-    {
-        if($nickname == 'bread1')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'bread2')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'bread3')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'bread4')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-    }
+if($rs2['status']==1)
+    echo"<img src=\"pics\\uncook.png\" width=\"110px\">;";
 }
 ?>
-    <div id="bread1" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $100 & 30 exp!</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">ok</button></form> </footer>
-    </div>
-    <div id="bread2" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $120 & 40 exp</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread2">ok</button></form> </footer>
-    </div>
-    <div id="bread3" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $140 & 50 exp!</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread3">ok</button></form> </footer>
-    </div>
-    <div id="bread4" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $160 & 60 exp!</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">ok</button></form> </footer>
-    </div>
-    </table>
 </div>
 
 <div class="equipment">

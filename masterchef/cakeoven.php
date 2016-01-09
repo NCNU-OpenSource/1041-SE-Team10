@@ -115,7 +115,7 @@ h3{
 }
 .uncook{
 	position: absolute;
-	left: 189px;
+	left: 360px;
 	top: 170px;
 }
 </style>
@@ -172,63 +172,14 @@ $(window).resize();
 	</div>
 	
 <div class="uncook">
-<table>
 <?php
 $sql2 = "select * from cakeoven";
 $results2=mysqli_query($conn,$sql2);
 while ($rs2=mysqli_fetch_array($results2)) {
-    $nickname = $rs2['name'];
-    if($rs2['status']==1)
-    {
-        if($nickname == 'cake1')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cake{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'cake2')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cake{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'cake3')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cake{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'cake4')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cake{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-    }   
-
+if($rs2['status']==1)
+    echo"<img src=\"pics\\uncook.png\" width=\"110px\">;";
 }
 ?>
-    <div id="cake1" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $100 & 40 exp!</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake1">ok</button></form> </footer>
-    </div>
-    <div id="cake2" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $120 & 50 exp</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake2">ok</button></form> </footer>
-    </div>
-    <div id="cake3" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $140 & 60 exp!</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake3">ok</button></form> </footer>
-    </div>
-    <div id="cake4" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Finish!</h3>
-    </header>
-        <div class="modal-body">
-            <p>you got $160 & 70 exp!</p>
-        </div>
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cake4">ok</button></form> </footer>
-    </div>
-    </table>
 </div>
 	
 	
@@ -251,6 +202,7 @@ while ($rs=mysqli_fetch_array($results)) {
 
 echo"</tr>";
 ?>
+
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
@@ -328,10 +280,8 @@ echo"</tr>";
 <div class="Back" style="z-index:15">
 <a href="home.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
-
 <body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
 <audio src="Music01.mp3" autoplay="true" loop="true" 
 hidden="true"></audio>
-
 </body>
 </html>

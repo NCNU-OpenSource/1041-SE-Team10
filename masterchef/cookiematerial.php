@@ -123,6 +123,10 @@ a.close:hover {
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
+
+var bs=new Audio();
+bs.src="Music06.mp3";
+
 $(function(){
 
 var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
@@ -246,5 +250,10 @@ $(window).resize();
         </div>
         <footer><form method="post" action="buyingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie4">buy</button></form> </footer>
 </div>
+
+<body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
+<audio src="Music05.mp3" autoplay="true" loop="true" 
+hidden="true"></audio>
+
 </body>
 </html>

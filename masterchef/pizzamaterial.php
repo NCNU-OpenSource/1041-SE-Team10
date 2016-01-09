@@ -1,29 +1,57 @@
 <?php
 require("config.php");
-$id=$_SESSION['uID'];
 ?>
 <style type="text/css">
-<!--.game {
+.game {
     position: absolute;
-    background-image: url(pics/homefade.png); 
+    background-image: url(pics/materialbackground.jpg); 
     background-repeat: no-repeat; 
     width: 800px;
     height: 600px;
     overflow: hidden;
     padding-left: 30px;
     padding-top: 30px;
-}-->
-.game img{
+	z-index:1;
+	opacity: .5;
+	filter: Alpha(Opacity=50);
+}
+.chef{
+	width: 150px;
+	height: 100px;
     position: absolute;
-    left:0px;
-    top:0px;
+	left: 600px;
+	top: 340px;
+	z-index: 20;
 }
-.equipment{
+.Back{
+    width: 150px;
+	height: 100px;
+    position: absolute;
+	left: 750px;
+	top: 600px;
+}
+.bake {
 	position: absolute;
-	left:170px;
-	top:520px;
+	left: 80px;
+	top: 90px;
+    z-index: 10;
+    
+    opacity:0.9;
 }
-
+table {
+    width: 700px;
+	height: 520px;
+	text-align: center;
+	background-color: white;
+	z-intex: 8px;
+}
+tr td{
+	font-size: 40px;
+}
+ul li{
+    list-style-type: none;
+	width: 20px;
+}
 .modal-box {
   display: none;
   position: absolute;
@@ -91,37 +119,14 @@ a.close:hover {
   -moz-transition: color 1s ease;
   transition: color 1s ease;
 }
-tr td{
-	font-size: 35px;
-	color: #333300;
-	font-family: cursive;
-	font-weight: bold;
-	text-shadow: 0px 0px 7px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 
-}
-.equipment{
-	left: 15px;
-	top: 450px;
-}
-h3{
-	font-size: 25px;
-	font-family: cursive;
-}
-.Back{
-    width: 150px;
-	height: 100px;
-    position: absolute;
-	left: 745px;
-	top: 528px;
-}
-.uncook{
-	position: absolute;
-	left: 360px;
-	top: 170px;
-}
 </style>
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>
+
+var bs=new Audio();
+bs.src="Music06.mp3";
+
 $(function(){
 
 var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
@@ -145,7 +150,7 @@ $(".js-modal-close, .modal-overlay").click(function() {
  
 $(window).resize(function() {
     $(".modal-box").css({
-        top: ($(window).height() - $(".modal-box").outerHeight()) / 1000,
+        top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
         left: ($(window).width() - $(".modal-box").outerWidth()) / 2
     });
 });
@@ -158,123 +163,97 @@ $(window).resize();
 </head>
 <html>
 <body>
-    <div class="container">
-		<div>
-            <div id="droppable" class="ui-widget-header">
-				<img src ="pics\ovenhome.png" style="z-index:1" width="800px" id="pizza">
-			</div>
-		</div>
-			
-	</div>
+<div class="game">
 
-<div class="uncook">
-<?php
-$sql2 = "select * from pizzaoven";
-$results2=mysqli_query($conn,$sql2);
-while ($rs2=mysqli_fetch_array($results2)) {
-if($rs2['status']==1)
-    echo"<img src=\"pics\\uncook.png\" width=\"110px\">;";
-}
-?>
 </div>
-	
-	
-<div class="equipment">
-<table>
+
+<div class="Back" style="z-index:15">
+<a href="shop.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
+</div>
+
+<div class="chef">
+<img src="pics\Chef-Clipart.png" width="250px">
+</div>
+
+<div class="bake" >
+
+<table class="pizzacategory">
 <?php
-$sql = "select * from pizzaoven where amount>0;";
-$results=mysqli_query($conn,$sql); 
-echo "<tr>";
-while ($rs=mysqli_fetch_array($results)) {
-	$src = $rs['name'];
-	if($rs['status']==0)
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs['uid']}\">
-	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
-	if($rs['status']==1)
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"notbuy{$rs['uid']}\">
-	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
-	echo "<td>x " , $rs['amount'] ,"</td>" ;
-}
+    $sql = "select * from user;";
+    mysqli_query($conn,$sql) or die("MySQL query error");
+    $results=mysqli_query($conn,$sql);
+    $rs=mysqli_fetch_array($results);
+	if($rs['exp']>=0){
+		echo "<tr><td><img src=\"pics\pizza1.png\" width=\"150px\"></td>";
+	}
+	if($rs['exp']>=200){
+		echo "<td><img src =\"pics\pizza2.png\" width=\"150px\"></td>";
+	}
+	if($rs['exp']>=400){
+		echo "<td><img src =\"pics\pizza3.png\" width=\"150px\"></td></tr>";
+	}
+	if($rs['exp']>=0){
+		echo "<tr><td>$50<br/><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy1\"><img src =\"pics\buybutton.png\"  width=\"100px\"></a></td>";
+	}
+    if($rs['exp']>=200){	
+		echo "<td>$60<br/><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy2\"><img src =\"pics\buybutton.png\"  width=\"100px\"></a></td>";
+    }
+	if($rs['exp']>=400){
+        echo "<td>$70<br/><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy3\"><img src =\"pics\buybutton.png\"  width=\"100px\"></a></td></tr>";
+    }    
+	if($rs['exp']>=600){	
+	    echo "<tr><td><img src =\"pics\cookie4.png\" style=\"z-index:10\" width=\"150px\"></td>";
+    }
+    if($rs['exp']>=600){
+    echo "<tr><td>$80<br/><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy4\"><img src =\"pics\buybutton.png\"  width=\"100px\"></a></td>";
+    }
+	echo "</tr>";
 
-echo"</tr>";
+
 ?>
+</table>
 
+</div>
 <div id="buy1" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Do you want to cook this?</h3>
+     <header> <a href="#" class="js-modal-close close">×</a>
+        <h3>Buy This Pizza Ingredient?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Pizza?</p>
+            <p>Do you wish you buy this ingredient packet for $50?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">start</button></form> </footer>
+        <footer><form method="post" action="buyingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">buy</button></form> </footer>
 </div>
 <div id="buy2" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Do you want to cook this?</h3>
+     <header> <a href="#" class="js-modal-close close">×</a>
+        <h3>Buy This Pizza Ingredient?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Pizza?</p>
+            <p>Do you wish you buy this ingredient packet for $60?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza2">start</button></form> </footer>
+        <footer><form method="post" action="buyingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza2">buy</button></form> </footer>
 </div>
 <div id="buy3" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Do you want to cook this?</h3>
+     <header> <a href="#" class="js-modal-close close">×</a>
+        <h3>Buy This Pizza Ingredient?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Pizza?</p>
+            <p>Do you wish you buy this ingredient packet for $70?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza3">start</button></form> </footer>
+        <footer><form method="post" action="buyingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza3">buy</button></form> </footer>
 </div>
 <div id="buy4" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Do you want to cook this?</h3>
+     <header> <a href="#" class="js-modal-close close">×</a>
+        <h3>Buy This Pizza Ingredient?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Pizza?</p>
+            <p>Do you wish you buy this ingredient packet for $80?</p>
         </div>
-        <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza4">start</button></form> </footer>
+        <footer><form method="post" action="buyingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza4">buy</button></form> </footer>
 </div>
-<div id="notbuy1" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Only can cook one pizza</h3>
-    </header>
-        <div class="modal-body">
-            <p>Please Wait</p>
-        </div>
-        <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">back</button></form> </footer>
-</div>
-<div id="notbuy2" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Only can cook one pizza</h3>
-    </header>
-        <div class="modal-body">
-            <p>Please Wait</p>
-        </div>
-        <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">back</button></form> </footer>
-</div>
-<div id="notbuy3" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Only can cook one pizza</h3>
-    </header>
-        <div class="modal-body">
-            <p>Please Wait</p>
-        </div>
-        <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">back</button></form> </footer>
-</div>
-<div id="notbuy4" class="modal-box">
-     <header> <a href="#" class="js-modal-close close">x</a>
-        <h3>Only can cook one pizza</h3>
-    </header>
-        <div class="modal-body">
-            <p>Please Wait</p>
-        </div>
-        <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">back</button></form> </footer>
-</div>
-</table>
-</div>
-<div class="Back" style="z-index:15">
-<a href="home.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
-</div>
+
+<body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
+<audio src="Music06.mp3" autoplay="true" loop="true" 
+hidden="true"></audio>
+
 </body>
 </html>

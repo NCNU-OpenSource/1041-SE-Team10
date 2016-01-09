@@ -93,49 +93,49 @@ switch($ingredient)
         
         break;
     case'bread1'://bread1
-        $sql = "update user set `cash`=`cash`+100,`exp`=`exp`+30 where id='$uid';";
+        $sql = "update user set `cash`=`cash`+100,`exp`=`exp`+30,where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error5-1"); 
         $sql2 = "update breadoven set `status`= 0 where `uid`='1';";
         mysqli_query($conn,$sql2) or die("MySQL query error5-2"); 
         header("Location:breadoven.php");
         break;
     case'bread2'://bread2
-        $sql = "update user set `cash`=`cash`+120,`exp`=`exp`+40 where id='$uid';";
+        $sql = "update user set `cash`=`cash`+120,`exp`=`exp`+40,where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error6-1"); 
         $sql2 = "update breadoven set `status`= 0 where `uid`='2';";
         mysqli_query($conn,$sql2) or die("MySQL query error6-2"); 
         header("Location:breadoven.php");
         break;
     case'bread3'://bread3
-        $sql = "update user set `cash`=`cash`+140,`exp`=`exp`+50 where id='$uid';";
+        $sql = "update user set `cash`=`cash`+140,`exp`=`exp`+50,where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error7-1"); 
         $sql2 = "update breadoven set `status`= 0 where `uid`='3';";
         mysqli_query($conn,$sql2) or die("MySQL query error7-2"); 
         header("Location:breadoven.php");
         break;
     case'bread4'://bread4
-        $sql = "update user set `cash`=`cash`+160,`exp`=`exp`+60 where id='$uid';";
+        $sql = "update user set `cash`=`cash`+160,`exp`=`exp`+60,where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error8-1"); 
         $sql2 = "update breadoven set `status`= 0 where `uid`='4';";
         mysqli_query($conn,$sql2) or die("MySQL query error8-2"); 
         header("Location:breadoven.php");
         break;
     case'cookie1'://cookie1
-        $sql = "update user set `cash`=`cash`+160,`exp`=`exp`+20 where id='$uid';";
+        $sql = "update user set `cash`=`cash`+160,`exp`=`exp`+20,where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error9-1"); 
         $sql2 = "update cookieoven set `status`= 0 where `uid`='1';";
         mysqli_query($conn,$sql2) or die("MySQL query error9-2"); 
         header("Location:cookieoven.php");
         break;
     case'cookie2'://cookie2
-        $sql = "update user set `cash`=`cash`+160,`exp`=`exp`+30 where id='$uid';";
+        $sql = "update user set `cash`=`cash`+160,`exp`=`exp`+30,where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error10-1");
         $sql2 = "update cookieoven set `status`= 0 where `uid`='2';";
         mysqli_query($conn,$sql2) or die("MySQL query error10-2");         
         header("Location:cookieoven.php");
         break;
     case'cookie3'://cookie3
-        $sql = "update user set `cash`=`cash`+160,`exp`=`exp`+40 where id='$uid';";
+        $sql = "update user set `cash`=`cash`+160,`exp`=`exp`+40,where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error11-1");
         $sql2 = "update cookieoven set `status`= 0 where `uid`='3';";
         mysqli_query($conn,$sql2) or die("MySQL query error11-2");         
@@ -143,7 +143,7 @@ switch($ingredient)
         
         break;
     case'cookie4'://cookie4
-        $sql = "update user set `cash`=`cash`+160,`exp`=`exp`+50 where id='$uid';";
+        $sql = "update user set `cash`=`cash`+160,`exp`=`exp`+50,where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error12-1"); 
         $sql2 = "update cookieoven set `status`= 0 where `uid`='4';";
         mysqli_query($conn,$sql2) or die("MySQL query error12-2"); 
@@ -152,28 +152,28 @@ switch($ingredient)
     case'pizza1'://pizza1
         $sql = "update user set `cash`=`cash`+100,`exp`=`exp`+50 where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error13-1");
-        $sql2 = "update pizzaoven set `status`= 0 where `uid`='1';";
+        $sql2 = "update pizzsoven set `status`= 0 where `uid`='1';";
         mysqli_query($conn,$sql2) or die("MySQL query error13-2");         
         header("Location:pizzaoven.php");
         break;
     case'pizza2'://pizza2
         $sql = "update user set `cash`=`cash`+120,`exp`=`exp`+60 where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error14-1");
-        $sql2 = "update pizzaoven set `status`= 0 where `uid`='2';";
+        $sql2 = "update pizzsoven set `status`= 0 where `uid`='2';";
         mysqli_query($conn,$sql2) or die("MySQL query error14-2");         
         header("Location:pizzaoven.php");
         break;
     case'pizza3'://pizza3
         $sql = "update user set `cash`=`cash`+140,`exp`=`exp`+70  where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error15-1");
-        $sql2 = "update pizzaoven set `status`= 0 where `uid`='3';";
+        $sql2 = "update pizzsoven set `status`= 0 where `uid`='3';";
         mysqli_query($conn,$sql2) or die("MySQL query error15-2");         
         header("Location:pizzaoven.php");
         break;
     case'pizza4'://pizza4
         $sql = "update user set `cash`=`cash`+160,`exp`=`exp`+80  where id='$uid';";
         mysqli_query($conn,$sql) or die("MySQL query error16-1"); 
-        $sql2 = "update pizzaoven set `status`= 0 where `uid`='4';";
+        $sql2 = "update pizzsoven set `status`= 0 where `uid`='4';";
         mysqli_query($conn,$sql2) or die("MySQL query error16-2"); 
         header("Location:pizzaoven.php");
         break;

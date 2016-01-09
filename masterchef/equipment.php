@@ -60,6 +60,10 @@ ul li{
 <head>
 
 <script>
+
+var bs=new Audio();
+bs.src="Music05.mp3";
+
 </script>
 
 </head>
@@ -120,6 +124,10 @@ echo "</tr>";
 ?>
 </table>
 </div>
+
+<body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
+<audio src="Music05.mp3" autoplay="true" loop="true" 
+hidden="true"></audio>
 
 </body>
 </html>
