@@ -60,7 +60,7 @@ $select2="select * from cakeoven where `user` = '$uid';";
 $select3="select * from cookieoven where `user`='$uid';";
 $select4="select * from breadoven where `user`='$uid';";
 $select5="select * from pizzaoven where `user`='$uid';";
-
+$which=0;
 switch($ingredient)
 {
     case'cake1'://cake
