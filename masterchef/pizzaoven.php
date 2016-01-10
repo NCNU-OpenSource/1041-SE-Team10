@@ -175,20 +175,20 @@ $(window).resize();
 <table>
 <?php
 $uid=$_SESSION['uID'];
-$sql2 = "select * from pizzaoven where `user`='$uid';";
+$sql2 = "select * from pizzaoven where user='$uid';";
 $results2=mysqli_query($conn,$sql2);
 while ($rs2=mysqli_fetch_array($results2)) {
     $nickname = $rs2['name'];
     if($rs2['status']==1)
     {
         if($nickname == 'pizza1')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
         if($nickname == 'pizza2')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
         if($nickname == 'pizza3')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
         if($nickname == 'pizza4')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
     }
 }
 ?>
@@ -233,9 +233,9 @@ while ($rs2=mysqli_fetch_array($results2)) {
 <div class="equipment">
 <table>
 <?php
-$sql = "select * from pizzaoven where amount>0;";
+$sql = "select * from pizzaoven where amount>0 and user='$uid';";
 $results=mysqli_query($conn,$sql);
-$sql2 = "select * from pizzaoven where amount>0;";
+$sql2 = "select * from pizzaoven where amount>0 and user='$uid';";
 $results2=mysqli_query($conn,$sql2);  
 $total = 0;  //設total來檢測status是否有1 有1者 則不能再烤 為0者 則可以進烤箱
 echo "<tr>";
