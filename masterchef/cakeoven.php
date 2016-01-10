@@ -239,60 +239,7 @@ $results=mysqli_query($conn,$sql);
 $sql2 = "select * from cakeoven where amount>0;";
 $results2=mysqli_query($conn,$sql2);  
 $total = 0;
-/*000000000000000000000000000000000000*/
-$count=0;
-    $hour1=time();//使用者查看秒數
-    $sql4="select * from `cakeoven` ;";
-    $results4=mysqli_query($conn,$sql4);
-    while($rs4=mysqli_fetch_array($results4)){
-    
-   
-    $count++;
-    if($count%3==1){
-        echo"</br>";
-    }
-    $status=$rs4['status'];
-
-   
-    $ftime=$rs4['ftime'];//作物完成時間秒數
-    $time=$ftime-$hour1;//作物完成時間減去使用者查看時間秒數(作物剩餘時間)
-    if($time<=0){
-        $h=0;//已完成
-        $m=0;
-        $s=0;
-        if($ftime!=0){
-            $sqlf = "update land set status='可採收' where id=$count;";
-	        mysqli_query($conn,$sqlf) or die("輸入錯誤1"); //執行SQL
-        }
-    }
-    else{
-        $h=floor($time/3600);//幾小時
-        $time=$time-($h*3600);
-        $m=floor($time/60);//幾分
-        $time=$time-($m*60);
-        $s=$time%60;//幾秒
-    }
-    if($status=="尚未解鎖"){
-        echo" <a href><img src='picture\lockland.png'/ onclick=window.open('land.php?id=$count','land.php',config='height=100,width=200')></a>" ;
-        
-    }
-    else if($status=="空地"){
-        echo "<a href><img src='picture\land.png' / onclick=window.open('seed.php?id=$count','seed.php',config='height=500,width=400')></a>";
-       
-    }
-    else {
-        
-        if($status=="可採收"){
-           
-           echo" <a href><img src='picture\growland.png' /onclick=window.open('flower.php?id=$count','flower.php',config='height=400,width=400')></a>" ;
-        }
-        else{
-            echo"<a href><img src='picture\seedland.png' / onclick=window.open('showsecond.php?id=$count','showsecond.php',config='height=455,width=520')></a>" ;
-        }
-        
-        
-    }
-/*000000000000000000000000000000000000*/    
+  
     
 echo "<tr>";
 while ($rs=mysqli_fetch_array($results)) {
@@ -391,7 +338,7 @@ echo"</tr>";
 <a href="home.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
 <body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
-<audio src="Music01.mp3" autoplay="true" loop="true" 
+<audio src="Music01.mp3" autoplay="true" loop="true"
 hidden="true"></audio>
 </body>
 </html>
