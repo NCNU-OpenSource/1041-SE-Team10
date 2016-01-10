@@ -1,7 +1,17 @@
 # 1041-SE-Team10
 
-# 1.Use case
 
-# 3.Class 設計
+</br>
+(1)CLASS設計</br>
+![image](https://github.com/NCNU-OpenSource/1041-SE-Team9/raw/master/img/class.jpg)
 
-# 5.Demo 額外多做哪些功能
+(2)DFD</br>
+![image](https://github.com/NCNU-OpenSource/1041-SE-Team9/raw/master/img/DFD.jpg)
+
+(3)UseCase</br>
+![image](https://github.com/NCNU-OpenSource/1041-SE-Team9/raw/master/img/USECASE1.jpg)
+![image](https://github.com/NCNU-OpenSource/1041-SE-Team9/raw/master/img/USECASE2.jpg)
+
+(5)額外功能</br>
+1.註冊</br>
+2.背景音樂</br>
