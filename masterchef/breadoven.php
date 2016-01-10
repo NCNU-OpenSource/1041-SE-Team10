@@ -99,8 +99,8 @@ tr td{
 	text-shadow: 0px 0px 7px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 
 }
 .equipment{
-	left: 50px;
-	top: 448px;
+	left: 15px;
+	top: 450px;
 }
 h3{
 	font-size: 25px;
@@ -118,9 +118,20 @@ h3{
 	left: 360px;
 	top: 170px;
 }
+.countdownHolder{
+	position: absolute;
+	left: -140px;
+	top: 190px;
+}
 </style>
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="stylesheet" href="assets/countdown/jquery.countdown.css" />
+
+<script src="assets/countdown/jquery.countdown.js"></script>
+<script src="assets/js/script.js"></script>
 <script>
 
 var bs=new Audio();
@@ -158,6 +169,18 @@ $(window).resize();
  
 });
 </script>
+<script>
+var img,t
+function Brock() {
+   img = new Image();
+   img.src = "pics\\cookie1.png";
+   Loader();
+ }
+function Loader() {
+    
+    t = setTimeout("document.getElementById(\"holder\").appendChild(img)", 30000);
+}
+</script>
 
 </head>
 <html>
@@ -170,34 +193,42 @@ $(window).resize();
 		</div>
 			
 	</div>
-    
-    
+
 <div class="uncook">
 <table>
 <?php
-$sql2 = "select * from breadoven";
+$uid=$_SESSION['uID'];
+$sql2 = "select * from breadoven where user='$uid';";
 $results2=mysqli_query($conn,$sql2);
 while ($rs2=mysqli_fetch_array($results2)) {
     $nickname = $rs2['name'];
     if($rs2['status']==1)
     {
-        if($nickname == 'bread1')
+        if($nickname == 'bread1'){
             echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'bread2')
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
+        if($nickname == 'bread2'){
             echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'bread3')
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
+        if($nickname == 'bread3'){
             echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'bread4')
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
+        if($nickname == 'bread4'){
             echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
     }
 }
 ?>
-    <div id="bread1" class="modal-box">
+	<div id="bread1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $100 & 30 exp!</p>
+            <p>you got $100 & 50 exp!</p>
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">ok</button></form> </footer>
     </div>
@@ -206,7 +237,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $120 & 40 exp</p>
+            <p>you got $120 & 60 exp</p>
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread2">ok</button></form> </footer>
     </div>
@@ -215,7 +246,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $140 & 50 exp!</p>
+            <p>you got $140 & 70 exp!</p>
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread3">ok</button></form> </footer>
     </div>
@@ -224,13 +255,12 @@ while ($rs2=mysqli_fetch_array($results2)) {
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $160 & 60 exp!</p>
+            <p>you got $160 & 80 exp!</p>
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">ok</button></form> </footer>
     </div>
     </table>
 </div>
-
 <div class="equipment">
 <table>
 <?php
@@ -238,7 +268,7 @@ $sql = "select * from breadoven where amount>0 and user='$uid';";
 $results=mysqli_query($conn,$sql);
 $sql2 = "select * from breadoven where amount>0 and user='$uid';";
 $results2=mysqli_query($conn,$sql2);  
-$total = 0;
+$total = 0;  //設total來檢測status是否有1 有1者 則不能再烤 為0者 則可以進烤箱
 echo "<tr>";
 while ($rs=mysqli_fetch_array($results)) {
     $total += $rs['status'];
@@ -257,13 +287,14 @@ while ($rs2=mysqli_fetch_array($results2)) {
 
 echo"</tr>";
 ?>
-
+<!--當total=0，可以買材料放進烤箱-->
+<!--當total=1，不能買材料放進烤箱-->
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Bread?</p>
+            <p>Cook bread?</p>
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">start</button></form> </footer>
 </div>
@@ -272,7 +303,7 @@ echo"</tr>";
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Bread?</p>
+            <p>Cook bread?</p>
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread2">start</button></form> </footer>
 </div>
@@ -281,7 +312,7 @@ echo"</tr>";
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Bread?</p>
+            <p>Cook bread?</p>
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread3">start</button></form> </footer>
 </div>
@@ -290,10 +321,11 @@ echo"</tr>";
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Bread?</p>
+            <p>Cook bread?</p>
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">start</button></form> </footer>
 </div>
+<!--當status=1，顯示燒等再放進烤箱-->
 <div id="notbuy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Only can cook one bread</h3>
@@ -310,7 +342,7 @@ echo"</tr>";
         <div class="modal-body">
             <p>Please Wait</p>
         </div>
-        <footer><form method="post" action="breadoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">back</button></form> </footer>
+        <footer><form method="post" action="breadoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread2">back</button></form> </footer>
 </div>
 <div id="notbuy3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -319,7 +351,7 @@ echo"</tr>";
         <div class="modal-body">
             <p>Please Wait</p>
         </div>
-        <footer><form method="post" action="breadoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">back</button></form> </footer>
+        <footer><form method="post" action="breadoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread3">back</button></form> </footer>
 </div>
 <div id="notbuy4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -328,7 +360,7 @@ echo"</tr>";
         <div class="modal-body">
             <p>Please Wait</p>
         </div>
-        <footer><form method="post" action="breadoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread1">back</button></form> </footer>
+        <footer><form method="post" action="breadoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">back</button></form> </footer>
 </div>
 </table>
 </div>
