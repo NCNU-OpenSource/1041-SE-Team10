@@ -163,10 +163,30 @@ $(window).resize(function() {
 $(window).resize();
 });
 </script>
+<script>
+
+var img,t
+
+function Brock() {
+   img = new Image();
+   img.src = "pics\\cookie1.png";
+   Loader();
+ }
+function Loader() {
+    
+    t = setTimeout("document.getElementById(\"holder\").appendChild(img)", 30000);
+}
+
+</script>
 
 </head>
 <html>
 <body>
+ <a href="javaScript:Brock();">Load Brock</a>
+<div id="holder" class="loading">
+
+ </div>
+
     <div class="container">
 		<div>
             <div id="droppable" class="ui-widget-header">
@@ -181,21 +201,27 @@ $(window).resize();
     <?php
     $sql2 = "select * from cookieoven";
     $results2=mysqli_query($conn,$sql2);
-    while ($rs2=mysqli_fetch_array($results2)) {
+    while ($rs2=mysqli_fetch_array($results2)) {  //烤餅乾賣餅乾
         $nickname = $rs2['name'];
         if($rs2['status']==1)
         {
-            if($nickname == 'cookie1')
+            if($nickname == 'cookie1'){
                 echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-
-
-            if($nickname == 'cookie2')
+			    echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+			}
+            if($nickname == 'cookie2'){
                 echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-            if($nickname == 'cookie3')
+			    echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+			}
+            if($nickname == 'cookie3'){
                 echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-            if($nickname == 'cookie4')
+                echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+			}
+			if($nickname == 'cookie4'){
                 echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        }
+                echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+			}
+		}
     }
     ?>
     
@@ -207,7 +233,7 @@ $(window).resize();
             <p>you got $100 & 20 exp!</p>
         </div>
         <!--放在這，如果加if-->
-        <div id="countdown" class="countdownHolder"></div>
+        
         <!--底下2行是拿來複製用的，因為不知道要放php還是html
         <!--<footer><form method="post" action="sold.php"><button type="submit" class="btn" btn-small js-modal-close name="id" value="cookie1">ok</button></form></footer>-->
         <!--"<footer><form method='post' action='sold.php'><button type='submit' class='btn btn-small js-modal-close' name='id' value='cookie1'>ok</button></form></footer>";-->
@@ -261,6 +287,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
 	if($total==0)
 	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs2['uid']}\">
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
+
 	if($total==1)
 	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"notbuy{$rs2['uid']}\">
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
@@ -269,6 +296,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
 
 echo"</tr>";
 ?>
+
 <!--不然就是放在這，但是這樣變成只要到此php就開始倒數，一樣是找不到變數的問題-->
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -278,7 +306,7 @@ echo"</tr>";
             <p>Cook Cookie?</p>
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">start</button></form> </footer>
-</div>
+		</div>
 <div id="buy2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
