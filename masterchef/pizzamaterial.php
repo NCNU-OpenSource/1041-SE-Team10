@@ -179,9 +179,10 @@ $(window).resize();
 
 <table class="pizzacategory">
 <?php
-    $sql = "select * from user where `id`=`$uid`;";
-    mysqli_query($conn,$sql) or die("MySQL query error");
-    $results=mysqli_query($conn,$sql);
+    $uid = $_SESSION['uID'];
+    $sql2 = "select * from user where id = '$uid';";
+    mysqli_query($conn,$sql2) or die("MySQL query error");
+    $results=mysqli_query($conn,$sql2);
     $rs=mysqli_fetch_array($results);
 	if($rs['exp']>=0){
 		echo "<tr><td><img src=\"pics\pizza1.png\" width=\"150px\"></td>";
