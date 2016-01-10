@@ -83,8 +83,8 @@ bs.src="Music05.mp3";
 
 <table class="equipment">
 <?php
-
-$sql = "select * from breadoven where amount>0;";
+$uid=$_SESSION['uID'];
+$sql = "select * from breadoven where amount>0 and user='$uid';";
 $results=mysqli_query($conn,$sql); 
 echo "<tr>";
 while ($rs=mysqli_fetch_array($results)) {
@@ -95,7 +95,7 @@ while ($rs=mysqli_fetch_array($results)) {
 }
 echo "</tr>";
 echo "<tr>";
-$sql2 = "select * from pizzaoven where amount>0;";
+$sql2 = "select * from pizzaoven where amount>0 and user='$uid';";
 $results2=mysqli_query($conn,$sql2); 
 while ($rs2=mysqli_fetch_array($results2)) {
 	$src2 = $rs2['name'];
@@ -104,7 +104,7 @@ while ($rs2=mysqli_fetch_array($results2)) {
 }
 echo "</tr>";
 echo "<tr>";
-$sql3 = "select * from cakeoven where amount>0;";
+$sql3 = "select * from cakeoven where amount>0 and user='$uid';";
 $results3=mysqli_query($conn,$sql3); 
 while ($rs3=mysqli_fetch_array($results3)) {
 	$src3 = $rs3['name'];
@@ -113,7 +113,7 @@ while ($rs3=mysqli_fetch_array($results3)) {
 }
 echo "</tr>";
 echo "<tr>";
-$sql4 = "select * from cookieoven where amount>0;";
+$sql4 = "select * from cookieoven where amount>0 and user='$uid';";
 $results4=mysqli_query($conn,$sql4); 
 while ($rs4=mysqli_fetch_array($results4)) {
 	$src4 = $rs4['name'];
