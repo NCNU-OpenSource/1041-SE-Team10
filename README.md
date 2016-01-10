@@ -3,14 +3,14 @@
 
 </br>
 (1)CLASS設計</br>
-![image](https://github.com/NCNU-OpenSource/1041-SE-Team9/raw/master/img/class.jpg)
+![image]()
 
 (2)DFD</br>
-![image](https://github.com/NCNU-OpenSource/1041-SE-Team9/raw/master/img/DFD.jpg)
+![image]()
 
 (3)UseCase</br>
-![image](https://github.com/NCNU-OpenSource/1041-SE-Team9/raw/master/img/USECASE1.jpg)
-![image](https://github.com/NCNU-OpenSource/1041-SE-Team9/raw/master/img/USECASE2.jpg)
+![image]()
+![image]()
 
 (5)額外功能</br>
 1.註冊</br>
