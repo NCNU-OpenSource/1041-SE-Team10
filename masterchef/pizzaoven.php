@@ -212,11 +212,11 @@ while ($rs2=mysqli_fetch_array($results2)) {
             echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
             echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
         }
-        if($nickname == 'cookie3'){
+        if($nickname == 'pizza3'){
             echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
             echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
         }
-        if($nickname == 'cookie4'){
+        if($nickname == 'pizza4'){
             echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
             echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
         }
