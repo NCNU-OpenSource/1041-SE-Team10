@@ -119,7 +119,6 @@ a.close:hover {
   -moz-transition: color 1s ease;
   transition: color 1s ease;
 }
-
 </style>
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -177,11 +176,13 @@ $(window).resize();
 </div>
 
 <div class="bake" >
+
 <table class="breadcategory">
 <?php
-    $sql = "select * from user;";
-    mysqli_query($conn,$sql) or die("MySQL query error");
-    $results=mysqli_query($conn,$sql);
+    $uid = $_SESSION['uID'];
+    $sql2 = "select * from user where id = '$uid';";
+    mysqli_query($conn,$sql2) or die("MySQL query error");
+    $results=mysqli_query($conn,$sql2);
     $rs=mysqli_fetch_array($results);
 	if($rs['exp']>=0){
 		echo "<tr><td><img src=\"pics\bread1.png\" width=\"150px\"></td>";
@@ -212,10 +213,11 @@ $(window).resize();
 
 ?>
 </table>
+
 </div>
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
-        <h3>Buy This Bread Ingredient?</h3>
+        <h3>Buy This bread Ingredient?</h3>
     </header>
         <div class="modal-body">
             <p>Do you wish you buy this ingredient packet for $50?</p>
@@ -224,7 +226,7 @@ $(window).resize();
 </div>
 <div id="buy2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
-        <h3>Buy This Bread Ingredient?</h3>
+        <h3>Buy This bread Ingredient?</h3>
     </header>
         <div class="modal-body">
             <p>Do you wish you buy this ingredient packet for $60?</p>
@@ -233,7 +235,7 @@ $(window).resize();
 </div>
 <div id="buy3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
-        <h3>Buy This Bread Ingredient?</h3>
+        <h3>Buy This bread Ingredient?</h3>
     </header>
         <div class="modal-body">
             <p>Do you wish you buy this ingredient packet for $70?</p>
@@ -242,17 +244,16 @@ $(window).resize();
 </div>
 <div id="buy4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">×</a>
-        <h3>Buy This Bread Ingredient?</h3>
+        <h3>Buy This bread Ingredient?</h3>
     </header>
         <div class="modal-body">
             <p>Do you wish you buy this ingredient packet for $80?</p>
         </div>
         <footer><form method="post" action="buyingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="bread4">buy</button></form> </footer>
-
 </div>
 
 <body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
-<audio src="Music05.mp3" autoplay="true" loop="true" 
+<audio src="Music06.mp3" autoplay="true" loop="true" 
 hidden="true"></audio>
 
 </body>
