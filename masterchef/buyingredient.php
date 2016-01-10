@@ -52,20 +52,19 @@ $uid=$_SESSION['uID'];
 <body>
 <div class="game">
 <?php
-$select="select * from user;";
+$select="select * from user where id='$uid';";
 $results=mysqli_query($conn,$select);
 $rs2=mysqli_fetch_array($results);
-$select2="select * from cakeoven where `uid` = '$uid';";
-$select3="select * from cookieoven where `uid`='$uid';";
-$select4="select * from breadoven where `uid`='$uid';";
-$select5="select * from pizzaoven where `uid`='$uid';";
-
+$select2="select * from cakeoven where `user` = '$uid';";
+$select3="select * from cookieoven where `user`='$uid';";
+$select4="select * from breadoven where `user`='$uid';";
+$select5="select * from pizzaoven where `user`='$uid';";
 switch($ingredient)
 {
     case'cake1'://cake
         if ($rs2['cash']>=50)
         {
-            $sql = "update cakeoven set `amount`=`amount`+1 where `uid`='1';";
+            $sql = "update cakeoven set `amount`=`amount`+1 where `name`='cake1';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -78,7 +77,7 @@ switch($ingredient)
     case'cake2'://cake
         if ($rs2['cash']>=60)
         {
-            $sql = "update cakeoven set `amount`=`amount`+1 where `uid`='2';";
+            $sql = "update cakeoven set `amount`=`amount`+1 where `name`='cake2';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -91,7 +90,7 @@ switch($ingredient)
     case'cake3'://cake
         if ($rs2['cash']>=70)
         {
-            $sql = "update cakeoven set `amount`=`amount`+1 where `uid`='3';";
+            $sql = "update cakeoven set `amount`=`amount`+1 where `name`='cake3';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -104,7 +103,7 @@ switch($ingredient)
     case'cake4'://cake
         if ($rs2['cash']>=80)
         {
-            $sql = "update cakeoven set `amount`=`amount`+1 where `uid`='4';";
+            $sql = "update cakeoven set `amount`=`amount`+1 where `name`='cake4';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -117,7 +116,7 @@ switch($ingredient)
     case'bread1'://bread
         if ($rs2['cash']>=50)
         {
-            $sql = "update breadoven set `amount`=`amount`+1 where `uid`='1';";
+            $sql = "update breadoven set `amount`=`amount`+1 where `name`='bread1';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -130,7 +129,7 @@ switch($ingredient)
     case'bread2'://bread
         if ($rs2['cash']>=60)
         {
-            $sql = "update breadoven set `amount`=`amount`+1 where `uid`='2';";
+            $sql = "update breadoven set `amount`=`amount`+1 where `name`='bread2';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -143,7 +142,7 @@ switch($ingredient)
     case'bread3'://bread
         if ($rs2['cash']>=70)
         {
-            $sql = "update breadoven set `amount`=`amount`+1 where `uid`='3';";
+            $sql = "update breadoven set `amount`=`amount`+1 where `name`='bread3';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -156,7 +155,7 @@ switch($ingredient)
     case'bread4'://bread
         if ($rs2['cash']>=80)
         {
-            $sql = "update breadoven set `amount`=`amount`+1 where `uid`='4';";
+            $sql = "update breadoven set `amount`=`amount`+1 where `name`='bread4';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -169,7 +168,7 @@ switch($ingredient)
     case'cookie1'://cookie
         if ($rs2['cash']>=50)
         {
-            $sql = "update cookieoven set `amount`=`amount`+1 where `uid`='1';";
+            $sql = "update cookieoven set `amount`=`amount`+1 where `name`='cookie1';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -182,7 +181,7 @@ switch($ingredient)
     case'cookie2'://cookie
         if ($rs2['cash']>=60)
         {
-            $sql = "update cookieoven set `amount`=`amount`+1 where `uid`='2';";
+            $sql = "update cookieoven set `amount`=`amount`+1 where `name`='cookie2';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -195,7 +194,7 @@ switch($ingredient)
     case'cookie3'://cookie
         if ($rs2['cash']>=70)
         {
-            $sql = "update cookieoven set `amount`=`amount`+1 where `uid`='3';";
+            $sql = "update cookieoven set `amount`=`amount`+1 where `name`='cookie3';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -208,7 +207,7 @@ switch($ingredient)
     case'cookie4'://cookie
         if ($rs2['cash']>=80)
         {
-            $sql = "update cookieoven set `amount`=`amount`+1 where `uid`='4';";
+            $sql = "update cookieoven set `amount`=`amount`+1 where `name`='cookie4';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -221,7 +220,7 @@ switch($ingredient)
     case'pizza1'://pizza
         if ($rs2['cash']>=50)
         {
-            $sql = "update pizzaoven set `amount`=`amount`+1 where `uid`='1';";
+            $sql = "update pizzaoven set `amount`=`amount`+1 where `name`='pizza1';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-50 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -234,7 +233,7 @@ switch($ingredient)
     case'pizza2'://pizza
         if ($rs2['cash']>=60)
         {
-            $sql = "update pizzaoven set `amount`=`amount`+1 where `uid`='2';";
+            $sql = "update pizzaoven set `amount`=`amount`+1 where `name`='pizza2';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-60 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -247,7 +246,7 @@ switch($ingredient)
     case'pizza3'://pizza
         if ($rs2['cash']>=70)
         {
-            $sql = "update pizzaoven set `amount`=`amount`+1 where `uid`='3';";
+            $sql = "update pizzaoven set `amount`=`amount`+1 where `name`='pizza3';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-70 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
@@ -260,7 +259,7 @@ switch($ingredient)
     case'pizza4'://pizza
         if ($rs2['cash']>=80)
         {
-            $sql = "update pizzaoven set `amount`=`amount`+1 where `uid`='4';";
+            $sql = "update pizzaoven set `amount`=`amount`+1 where `name`='pizza4';";
             mysqli_query($conn,$sql) or die("MySQL query error"); 
             $sql2 = "update user set `cash`=`cash`-80 where id='$uid';";
             mysqli_query($conn,$sql2) or die("MySQL query error2"); //執行SQL
