@@ -118,6 +118,11 @@ h3{
 	left: 360px;
 	top: 170px;
 }
+.countdownHolder{
+	position: absolute;
+	left: -140px;
+	top: 190px;
+}
 </style>
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
