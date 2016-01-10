@@ -23,6 +23,7 @@ $id=$_SESSION['uID'];
 	left:170px;
 	top:520px;
 }
+
 .modal-box {
   display: none;
   position: absolute;
@@ -37,18 +38,23 @@ $id=$_SESSION['uID'];
   background-clip: padding-box;
 }
 @media (min-width: 32em) {
+
 .modal-box { width: 300px; position: absolute; left: 100px;}
 }
+
 .modal-box header,
 .modal-box .modal-header {
   padding: 1.25em 1.5em;
   border-bottom: 1px solid #ddd;
 }
+
 .modal-box header h3,
 .modal-box header h4,
 .modal-box .modal-header h3,
 .modal-box .modal-header h4 { margin: 0; }
+
 .modal-box .modal-body { padding: 2em 1.5em; }
+
 .modal-box footer,
 .modal-box .modal-footer {
   padding: 1em;
@@ -56,6 +62,7 @@ $id=$_SESSION['uID'];
   background: rgba(0, 0, 0, 0.02);
   text-align: right;
 }
+
 .modal-overlay {
   opacity: 0;
   filter: alpha(opacity=0);
@@ -67,6 +74,7 @@ $id=$_SESSION['uID'];
   height: 100%;
   background: rgba(0, 0, 0, 0.3) !important;
 }
+
 a.close {
   line-height: 1;
   font-size: 1.5em;
@@ -76,6 +84,7 @@ a.close {
   text-decoration: none;
   color: #bbb;
 }
+
 a.close:hover {
   color: #222;
   -webkit-transition: color 1s ease;
@@ -90,8 +99,8 @@ tr td{
 	text-shadow: 0px 0px 7px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 0px 0px 5px #fff, 
 }
 .equipment{
-	left: 50px;
-	top: 448px;
+	left: 15px;
+	top: 450px;
 }
 h3{
 	font-size: 25px;
@@ -109,6 +118,11 @@ h3{
 	left: 360px;
 	top: 170px;
 }
+.countdownHolder{
+	position: absolute;
+	left: -140px;
+	top: 190px;
+}
 </style>
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -119,10 +133,14 @@ h3{
 <script src="assets/countdown/jquery.countdown.js"></script>
 <script src="assets/js/script.js"></script>
 <script>
+
 var bs=new Audio();
 bs.src="Music01.mp3";
+
 $(function(){
+
 var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
+
 	$('a[data-modal-id]').click(function(e) {
 		e.preventDefault();
     $("body").append(appendthis);
@@ -148,6 +166,7 @@ $(window).resize(function() {
 });
  
 $(window).resize();
+ 
 });
 </script>
 <script>
@@ -166,8 +185,6 @@ function Loader() {
 </head>
 <html>
 <body>
-
-
     <div class="container">
 		<div>
             <div id="droppable" class="ui-widget-header">
@@ -178,54 +195,49 @@ function Loader() {
 	</div>
 
 <div class="uncook">
-    <table>
-    <?php
-    $sql2 = "select * from cookieoven";
-    $results2=mysqli_query($conn,$sql2);
-    while ($rs2=mysqli_fetch_array($results2)) {  //烤餅乾賣餅乾
-        $nickname = $rs2['name'];
-        if($rs2['status']==1)
-        {
-            if($nickname == 'cookie1'){
-                echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-			    echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
-			}
-            if($nickname == 'cookie2'){
-                echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-			    echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
-			}
-            if($nickname == 'cookie3'){
-                echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-                echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
-			}
-			if($nickname == 'cookie4'){
-                echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-                echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
-			}
-		}
+<table>
+<?php
+$uid=$_SESSION['uID'];
+$sql2 = "select * from cookieoven where user='$uid';";
+$results2=mysqli_query($conn,$sql2);
+while ($rs2=mysqli_fetch_array($results2)) {
+    $nickname = $rs2['name'];
+    if($rs2['status']==1)
+    {
+        if($nickname == 'cookie1'){
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
+        if($nickname == 'cookie2'){
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
+        if($nickname == 'cookie3'){
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
+        if($nickname == 'cookie4'){
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"cookie{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
     }
-    ?>
-    
-    <div id="cookie1" class="modal-box">
+}
+?>
+	<div id="cookie1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $100 & 20 exp!</p>
+            <p>you got $100 & 50 exp!</p>
         </div>
-        <!--放在這，如果加if-->
-        
-        <!--底下2行是拿來複製用的，因為不知道要放php還是html
-        <!--<footer><form method="post" action="sold.php"><button type="submit" class="btn" btn-small js-modal-close name="id" value="cookie1">ok</button></form></footer>-->
-        <!--"<footer><form method='post' action='sold.php'><button type='submit' class='btn btn-small js-modal-close' name='id' value='cookie1'>ok</button></form></footer>";-->
-        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">ok</button></form></footer>
+        <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">ok</button></form> </footer>
     </div>
     <div id="cookie2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $120 & 30 exp</p>
+            <p>you got $120 & 60 exp</p>
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie2">ok</button></form> </footer>
     </div>
@@ -234,7 +246,7 @@ function Loader() {
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $140 & 40 exp!</p>
+            <p>you got $140 & 70 exp!</p>
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie3">ok</button></form> </footer>
     </div>
@@ -243,13 +255,12 @@ function Loader() {
         <h3>Finish!</h3>
     </header>
         <div class="modal-body">
-            <p>you got $160 & 50 exp!</p>
+            <p>you got $160 & 80 exp!</p>
         </div>
         <footer><form method="post" action="sold.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie4">ok</button></form> </footer>
     </div>
     </table>
 </div>
-
 <div class="equipment">
 <table>
 <?php
@@ -257,7 +268,7 @@ $sql = "select * from cookieoven where amount>0 and user='$uid';";
 $results=mysqli_query($conn,$sql);
 $sql2 = "select * from cookieoven where amount>0 and user='$uid';";
 $results2=mysqli_query($conn,$sql2);  
-$total = 0;
+$total = 0;  //設total來檢測status是否有1 有1者 則不能再烤 為0者 則可以進烤箱
 echo "<tr>";
 while ($rs=mysqli_fetch_array($results)) {
     $total += $rs['status'];
@@ -273,25 +284,26 @@ while ($rs2=mysqli_fetch_array($results2)) {
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
 	echo "<td>x " , $rs2['amount'] ,"</td>" ;
 }
+
 echo"</tr>";
 ?>
-
-<!--不然就是放在這，但是這樣變成只要到此php就開始倒數，一樣是找不到變數的問題-->
+<!--當total=0，可以買材料放進烤箱-->
+<!--當total=1，不能買材料放進烤箱-->
 <div id="buy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Cookie?</p>
+            <p>Cook cookie?</p>
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">start</button></form> </footer>
-		</div>
+</div>
 <div id="buy2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Cookie?</p>
+            <p>Cook cookie?</p>
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie2">start</button></form> </footer>
 </div>
@@ -300,7 +312,7 @@ echo"</tr>";
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Cookie?</p>
+            <p>Cook cookie?</p>
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie3">start</button></form> </footer>
 </div>
@@ -309,10 +321,11 @@ echo"</tr>";
         <h3>Do you want to cook this?</h3>
     </header>
         <div class="modal-body">
-            <p>Cook Cookie?</p>
+            <p>Cook cookie?</p>
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie4">start</button></form> </footer>
 </div>
+<!--當status=1，顯示燒等再放進烤箱-->
 <div id="notbuy1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Only can cook one cookie</h3>
@@ -329,7 +342,7 @@ echo"</tr>";
         <div class="modal-body">
             <p>Please Wait</p>
         </div>
-        <footer><form method="post" action="cookieoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">back</button></form> </footer>
+        <footer><form method="post" action="cookieoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie2">back</button></form> </footer>
 </div>
 <div id="notbuy3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -338,7 +351,7 @@ echo"</tr>";
         <div class="modal-body">
             <p>Please Wait</p>
         </div>
-        <footer><form method="post" action="cookieoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">back</button></form> </footer>
+        <footer><form method="post" action="cookieoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie3">back</button></form> </footer>
 </div>
 <div id="notbuy4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
@@ -347,7 +360,7 @@ echo"</tr>";
         <div class="modal-body">
             <p>Please Wait</p>
         </div>
-        <footer><form method="post" action="cookieoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie1">back</button></form> </footer>
+        <footer><form method="post" action="cookieoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="cookie4">back</button></form> </footer>
 </div>
 </table>
 </div>
@@ -355,7 +368,7 @@ echo"</tr>";
 <a href="home.php"><img src="pics/unnamed.png" id="back" width="60px" height="auto" ></a>
 </div>
 <body onload="alertify.alert('歡迎來到麵包坊   來烤個麵包吧')"  ">
-<audio src="Music01.mp" autoplay="true" loop="true" 
+<audio src="Music01.mp3" autoplay="true" loop="true" 
 hidden="true"></audio>
 </body>
 </html>
