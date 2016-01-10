@@ -67,39 +67,36 @@ if($id=='cookieoven')
 if($id=='pizzaoven')
     $id=4;
 
-if ($rs2['cash']>=500)//如果夠付
-{
-    switch($oven)
-    {
-        case'breadoven':
-            $sql = "update oven set `amount`='1' where id='$id';";
-            mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
-            $sql2 = "update user set `cash`=`cash`-500 where nickname='$nickname';";
-            mysqli_query($conn,$sql2) or die("MySQL query error2");
-            header("Location:home.php");
-            break;
-        case'cakeoven':
-            $sql = "update oven set `amount`='1' where id='$id';";
-            mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
-            $sql2 = "update user set `cash`=`cash`-500 where nickname='$nickname';";
-            mysqli_query($conn,$sql2) or die("MySQL query error2");
-            header("Location:home.php");
-            break;
-        case'cookieoven':
-            $sql = "update oven set `amount`='1' where id='$id';";
-            mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
-            $sql2 = "update user set `cash`=`cash`-500 where nickname='$nickname';";
-            mysqli_query($conn,$sql2) or die("MySQL query error2");
-            header("Location:home.php");
-            break;
-        case'pizzaoven':
-            $sql = "update oven set `amount`='1' where id='$id';";
-            mysqli_query($conn,$sql) or die("MySQL query error1"); //執行SQL
-            $sql2 = "update user set `cash`=`cash`-500 where nickname='$nickname';";
-            mysqli_query($conn,$sql2) or die("MySQL query error2");
-            header("Location:home.php");
-            break;
-    }
+if ($rs2['cash']>=500){
+    if ($oven==pizzaoven) {
+        $sql = "update oven set `pizzaoven`='1' where uid='$uid';";
+        $sql2 = "update user set `cash`=`cash`-500 where id='$uid';";
+        mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
+        mysqli_query($conn,$sql2) or die("MySQL query error2");
+        header("Location:home.php");
+    } else echo "empty message id.";
+    if ($oven==breadoven) {
+        $sql = "update oven set `breadoven`='1' where uid='$uid';";
+        $sql2 = "update user set `cash`=`cash`-500 where id='$uid';";
+        mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
+        mysqli_query($conn,$sql2) or die("MySQL query error2");
+        header("Location:home.php");
+    } else echo "empty message id.";
+    if ($oven==cookieoven) {
+        $sql = "update oven set `cookieoven`='1' where uid='$uid';";
+        $sql2 = "update user set `cash`=`cash`-500 where id='$uid';";
+        mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
+        mysqli_query($conn,$sql2) or die("MySQL query error2");
+        header("Location:home.php");
+    } else echo "empty message id.";
+    if ($oven==cakeoven) {
+        $sql = "update oven set `cakeoven`='1' where uid='$uid';";
+        $sql2 = "update user set `cash`=`cash`-500 where id='$uid';";
+        mysqli_query($conn,$sql) or die("MySQL query error"); //執行SQL
+        mysqli_query($conn,$sql2) or die("MySQL query error2");
+        header("Location:home.php");
+    } else echo "empty message id.";
+
 header("Location:home.php");
 }
 echo "<h1>you don't have enough money!</h1>"

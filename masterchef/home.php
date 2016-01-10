@@ -181,7 +181,7 @@ $rs2=mysqli_fetch_array($results2);
 echo "<img src=\"pics\cash.png\" style=\"width:70px\" />：";
 echo $rs2['cash'];
 echo "<img src=\"pics\EXP.png\" style=\"width:90px\" />：";
-echo $rs2['exp'];
+echo ($rs2['exp']%100),"/100";
 echo "<img src=\"pics\level.png\" style=\"width:90px\" />：";
 echo floor($rs2['exp']/100);
 ?>

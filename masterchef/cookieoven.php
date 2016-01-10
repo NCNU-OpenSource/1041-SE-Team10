@@ -23,7 +23,6 @@ $id=$_SESSION['uID'];
 	left:170px;
 	top:520px;
 }
-
 .modal-box {
   display: none;
   position: absolute;
@@ -38,23 +37,18 @@ $id=$_SESSION['uID'];
   background-clip: padding-box;
 }
 @media (min-width: 32em) {
-
 .modal-box { width: 300px; position: absolute; left: 100px;}
 }
-
 .modal-box header,
 .modal-box .modal-header {
   padding: 1.25em 1.5em;
   border-bottom: 1px solid #ddd;
 }
-
 .modal-box header h3,
 .modal-box header h4,
 .modal-box .modal-header h3,
 .modal-box .modal-header h4 { margin: 0; }
-
 .modal-box .modal-body { padding: 2em 1.5em; }
-
 .modal-box footer,
 .modal-box .modal-footer {
   padding: 1em;
@@ -62,7 +56,6 @@ $id=$_SESSION['uID'];
   background: rgba(0, 0, 0, 0.02);
   text-align: right;
 }
-
 .modal-overlay {
   opacity: 0;
   filter: alpha(opacity=0);
@@ -74,7 +67,6 @@ $id=$_SESSION['uID'];
   height: 100%;
   background: rgba(0, 0, 0, 0.3) !important;
 }
-
 a.close {
   line-height: 1;
   font-size: 1.5em;
@@ -84,7 +76,6 @@ a.close {
   text-decoration: none;
   color: #bbb;
 }
-
 a.close:hover {
   color: #222;
   -webkit-transition: color 1s ease;
@@ -128,14 +119,10 @@ h3{
 <script src="assets/countdown/jquery.countdown.js"></script>
 <script src="assets/js/script.js"></script>
 <script>
-
 var bs=new Audio();
 bs.src="Music01.mp3";
-
 $(function(){
-
 var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
-
 	$('a[data-modal-id]').click(function(e) {
 		e.preventDefault();
     $("body").append(appendthis);
@@ -164,9 +151,7 @@ $(window).resize();
 });
 </script>
 <script>
-
 var img,t
-
 function Brock() {
    img = new Image();
    img.src = "pics\\cookie1.png";
@@ -176,7 +161,6 @@ function Loader() {
     
     t = setTimeout("document.getElementById(\"holder\").appendChild(img)", 30000);
 }
-
 </script>
 
 </head>
@@ -287,13 +271,11 @@ while ($rs2=mysqli_fetch_array($results2)) {
 	if($total==0)
 	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs2['uid']}\">
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
-
 	if($total==1)
 	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"notbuy{$rs2['uid']}\">
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
 	echo "<td>x " , $rs2['amount'] ,"</td>" ;
 }
-
 echo"</tr>";
 ?>
 

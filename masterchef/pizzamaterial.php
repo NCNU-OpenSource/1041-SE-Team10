@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require("config.php");
 ?>
 <style type="text/css">
@@ -179,7 +179,7 @@ $(window).resize();
 
 <table class="pizzacategory">
 <?php
-    $sql = "select * from user;";
+    $sql = "select * from user where `id`=`$uid`;";
     mysqli_query($conn,$sql) or die("MySQL query error");
     $results=mysqli_query($conn,$sql);
     $rs=mysqli_fetch_array($results);
@@ -202,7 +202,7 @@ $(window).resize();
         echo "<td>$70<br/><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy3\"><img src =\"pics\buybutton.png\"  width=\"100px\"></a></td></tr>";
     }    
 	if($rs['exp']>=600){	
-	    echo "<tr><td><img src =\"pics\pizza4.png\" style=\"z-index:10\" width=\"150px\"></td>";
+	    echo "<tr><td><img src =\"pics\cookie4.png\" style=\"z-index:10\" width=\"150px\"></td>";
     }
     if($rs['exp']>=600){
     echo "<tr><td>$80<br/><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy4\"><img src =\"pics\buybutton.png\"  width=\"100px\"></a></td>";

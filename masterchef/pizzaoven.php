@@ -174,7 +174,8 @@ $(window).resize();
 <div class="uncook">
 <table>
 <?php
-$sql2 = "select * from pizzaoven";
+$uid=$_SESSION['uID'];
+$sql2 = "select * from pizzaoven where `user`='$uid';";
 $results2=mysqli_query($conn,$sql2);
 while ($rs2=mysqli_fetch_array($results2)) {
     $nickname = $rs2['name'];
