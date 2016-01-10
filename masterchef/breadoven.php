@@ -234,9 +234,9 @@ while ($rs2=mysqli_fetch_array($results2)) {
 <div class="equipment">
 <table>
 <?php
-$sql = "select * from breadoven where amount>0;";
+$sql = "select * from breadoven where amount>0 and user='$uid';";
 $results=mysqli_query($conn,$sql);
-$sql2 = "select * from breadoven where amount>0;";
+$sql2 = "select * from breadoven where amount>0 and user='$uid';";
 $results2=mysqli_query($conn,$sql2);  
 $total = 0;
 echo "<tr>";
