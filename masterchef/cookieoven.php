@@ -166,10 +166,7 @@ function Loader() {
 </head>
 <html>
 <body>
- <a href="javaScript:Brock();">Load Brock</a>
-<div id="holder" class="loading">
 
- </div>
 
     <div class="container">
 		<div>

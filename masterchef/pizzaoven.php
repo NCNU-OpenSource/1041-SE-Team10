@@ -121,6 +121,12 @@ h3{
 </style>
 <head>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="stylesheet" href="assets/countdown/jquery.countdown.css" />
+
+<script src="assets/countdown/jquery.countdown.js"></script>
+<script src="assets/js/script.js"></script>
 <script>
 
 var bs=new Audio();
@@ -158,6 +164,18 @@ $(window).resize();
  
 });
 </script>
+<script>
+var img,t
+function Brock() {
+   img = new Image();
+   img.src = "pics\\cookie1.png";
+   Loader();
+ }
+function Loader() {
+    
+    t = setTimeout("document.getElementById(\"holder\").appendChild(img)", 30000);
+}
+</script>
 
 </head>
 <html>
@@ -181,14 +199,22 @@ while ($rs2=mysqli_fetch_array($results2)) {
     $nickname = $rs2['name'];
     if($rs2['status']==1)
     {
-        if($nickname == 'pizza1')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'pizza2')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'pizza3')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
-        if($nickname == 'pizza4')
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+        if($nickname == 'pizza1'){
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
+        if($nickname == 'pizza2'){
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
+        if($nickname == 'cookie3'){
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
+        if($nickname == 'cookie4'){
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"pizza{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
+        }
     }
 }
 ?>
