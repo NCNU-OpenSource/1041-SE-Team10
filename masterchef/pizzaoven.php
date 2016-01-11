@@ -277,10 +277,10 @@ while ($rs2=mysqli_fetch_array($results2)) {
 	
 	$src = $rs2['name'];
 	if($total==0)
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs2['uid']}\">
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"buy{$rs2['name']}\">
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
 	if($total==1)
-	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"notbuy{$rs2['uid']}\">
+	echo "<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"notbuy{$rs2['name']}\">
 	<img src=\"pics\\{$src}.png\" width=\"120px\"></a></td>";
 	echo "<td>x " , $rs2['amount'] ,"</td>" ;
 }
@@ -289,7 +289,7 @@ echo"</tr>";
 ?>
 <!--當total=0，可以買材料放進烤箱-->
 <!--當total=1，不能買材料放進烤箱-->
-<div id="buy1" class="modal-box">
+<div id="buypizza1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
@@ -298,7 +298,7 @@ echo"</tr>";
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">start</button></form> </footer>
 </div>
-<div id="buy2" class="modal-box">
+<div id="buypizza2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
@@ -307,7 +307,7 @@ echo"</tr>";
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza2">start</button></form> </footer>
 </div>
-<div id="buy3" class="modal-box">
+<div id="buypizza3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
@@ -316,7 +316,7 @@ echo"</tr>";
         </div>
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza3">start</button></form> </footer>
 </div>
-<div id="buy4" class="modal-box">
+<div id="buypizza4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Do you want to cook this?</h3>
     </header>
@@ -326,7 +326,7 @@ echo"</tr>";
         <footer><form method="post" action="cookingredient.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza4">start</button></form> </footer>
 </div>
 <!--當status=1，顯示燒等再放進烤箱-->
-<div id="notbuy1" class="modal-box">
+<div id="notbuypizza1" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Only can cook one pizza</h3>
     </header>
@@ -335,7 +335,7 @@ echo"</tr>";
         </div>
         <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza1">back</button></form> </footer>
 </div>
-<div id="notbuy2" class="modal-box">
+<div id="notbuypizza2" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Only can cook one pizza</h3>
     </header>
@@ -344,7 +344,7 @@ echo"</tr>";
         </div>
         <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza2">back</button></form> </footer>
 </div>
-<div id="notbuy3" class="modal-box">
+<div id="notbuypizza3" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Only can cook one pizza</h3>
     </header>
@@ -353,7 +353,7 @@ echo"</tr>";
         </div>
         <footer><form method="post" action="pizzaoven.php"><button type="submit" class="btn btn-small js-modal-close" name="id" value="pizza3">back</button></form> </footer>
 </div>
-<div id="notbuy4" class="modal-box">
+<div id="notbuypizza4" class="modal-box">
      <header> <a href="#" class="js-modal-close close">x</a>
         <h3>Only can cook one pizza</h3>
     </header>
