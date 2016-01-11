@@ -205,19 +205,19 @@ while ($rs2=mysqli_fetch_array($results2)) {
     if($rs2['status']==1)
     {
         if($nickname == 'bread1'){
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
             echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
         }
         if($nickname == 'bread2'){
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
             echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
         }
         if($nickname == 'bread3'){
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
             echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
         }
         if($nickname == 'bread4'){
-            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"bread{$rs2['uid']}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
+            echo"<td><a class=\"js-open-modal btn\" href=\"#\" data-modal-id=\"{$nickname}\"><img src=\"pics\\uncook.png\" width=\"120px\"></a></td>";
             echo"<div id=\"countdown\" class=\"countdownHolder\"></div>";
         }
     }

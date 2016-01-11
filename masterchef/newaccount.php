@@ -31,29 +31,28 @@ $gender=mysqli_real_escape_string($conn,$_POST['gender']);
 
 
 if ($uid) {
-	$sql = "insert into user (id, password, nickname, gender, cash) values ('$uid', '$password','$nickname','$gender', '550');";
+	$sql = "insert into user (id, password, nickname, gender, cash,exp) values ('$uid', '$password','$nickname','$gender', '550','0');";
     $sql2 = "insert into oven (uid, cakeoven, breadoven, pizzaoven, cookieoven) values ('$uid','0','0','0','0');";
-     $sql3 = "insert into cakeoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'cake1','0','40','1','50', '100');";
-     $sql4 = "insert into cakeoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'cake2','0','50','2','60', '120');";
-     $sql5 = "insert into cakeoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'cake3','0','60','3','70', '140');";
-     $sql6 = "insert into cakeoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'cake4','0','70','4','80', '160');";
-     $sql7 = "insert into breadoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'bread1','0','30','1','50', '100');";
-     $sql8 = "insert into breadoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'bread2','0','40','2','60', '120');";
-     $sql9 = "insert into breadoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'bread3','0','50','3','70', '140');";
-     $sql10 = "insert into breadoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'bread4','0','60','4','80', '160');";
-     $sql7 = "insert into breadoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'bread1','0','30','1','50', '100');";
-     $sql8 = "insert into breadoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'bread2','0','40','2','60', '120');";
-     $sql9 = "insert into breadoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'bread3','0','50','3','70', '140');";
-     $sql10 = "insert into breadoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'bread4','0','60','4','80', '160');";
-     $sql11 = "insert into cookieoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'cookie1','0','20','1','50', '100');";
-     $sql12 = "insert into cookieoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'cookie2','0','30','2','60', '120');";
-     $sql13 = "insert into cookieoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'cookie3','0','40','3','70', '140');";
-     $sql14 = "insert into cookieoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'cookie4','0','50','4','80', '160');";
-     $sql15 = "insert into pizzaoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'pizza1','0','50','1','50', '100');";
-     $sql16 = "insert into pizzaoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'pizza2','0','60','2','60', '120');";
-     $sql17 = "insert into pizzaoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'pizza3','0','70','3','70', '140');";
-     $sql18 = "insert into pizzaoven (user, name, amount, exp, time, cash, sold) values ('$uid', 'pizza4','0','80','4','80', '160');";
-   	mysqli_query($conn,$sql) or die("MySQL insert message error"); //執行SQL
+     $sql3 = "insert into cakeoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'cake1','0','40','1','50', '100','0');";
+     $sql4 = "insert into cakeoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'cake2','0','50','2','60', '120','0');";
+     $sql5 = "insert into cakeoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'cake3','0','60','3','70', '140','0');";
+     $sql6 = "insert into cakeoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'cake4','0','70','4','80', '160','0');";
+     $sql7 = "insert into breadoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'bread1','0','30','1','50', '100','0');";
+     $sql8 = "insert into breadoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'bread2','0','40','2','60', '120','0');";
+     $sql9 = "insert into breadoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'bread3','0','50','3','70', '140','0');";
+     $sql10 = "insert into breadoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'bread4','0','60','4','80', '160','0');";
+     $sql7 = "insert into breadoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'bread1','0','30','1','50', '100','0');";
+     $sql8 = "insert into breadoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'bread2','0','40','2','60', '120','0');";
+     $sql9 = "insert into breadoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'bread3','0','50','3','70', '140','0');";
+     $sql10 = "insert into breadoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'bread4','0','60','4','80', '160','0');";
+     $sql11 = "insert into cookieoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'cookie1','0','20','1','50', '100','0');";
+     $sql12 = "insert into cookieoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'cookie2','0','30','2','60', '120','0');";
+     $sql13 = "insert into cookieoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'cookie3','0','40','3','70', '140','0');";
+     $sql14 = "insert into cookieoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'cookie4','0','50','4','80', '160','0');";
+     $sql15 = "insert into pizzaoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'pizza1','0','50','1','50', '100','0');";
+     $sql16 = "insert into pizzaoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'pizza2','0','60','2','60', '120','0');";
+     $sql17 = "insert into pizzaoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'pizza3','0','70','3','70', '140','0');";
+     $sql18 = "insert into pizzaoven (user, name, amount, exp, time, cash, sold,status) values ('$uid', 'pizza4','0','80','4','80', '160','0');";
       mysqli_query($conn,$sql2) or die("MySQL insert message error"); //執行SQL
       mysqli_query($conn,$sql3) or die("MySQL insert message error"); //執行SQL
       mysqli_query($conn,$sql4) or die("MySQL insert message error"); //執行SQL
