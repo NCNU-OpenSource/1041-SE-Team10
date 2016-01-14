@@ -9,7 +9,7 @@ $(function(){
 		// Notice the *1000 at the end - time must be in milliseconds
 		
         //gettime拿到的是毫秒，乘1000=1杪
-        ts = (new Date()).getTime() + 30*1000;
+        ts = (new Date()).getTime() + 10*1000;
 		newYear = false;
 	}
 		
